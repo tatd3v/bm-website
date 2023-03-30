@@ -7,7 +7,5 @@ import { BackgroundVideo } from "../../components/home/backgroundVideo";
 import "./home.css";
 
 export const Home = () => {
-  return (
-    <div>HOME</div>
-  );
+  return <section className="home__container">MILOY ES LO MAXIMO</section>;
 };
