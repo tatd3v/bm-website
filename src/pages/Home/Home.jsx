@@ -1,11 +1,15 @@
 import React from "react";
 
 // @components
-import { BackgroundVideo } from "../../components/home/backgroundVideo";
+import { BackgroundVideo } from "../../components";
 
 // @styles
 import "./home.css";
 
 export const Home = () => {
-  return <section className="home__container">MILOY ES LO MAXIMO</section>;
+  return (
+    <div className="home__container">
+      <h1>NEWS</h1>
+    </div>
+  );
 };
