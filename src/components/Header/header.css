@@ -12,6 +12,7 @@
 .header__nav-container {
   display: flex;
   flex-direction: column;
+  overflow: hidden;
   padding: 0.5rem !important;
   width: 100% !important;
 }

@@ -7,12 +7,8 @@ import "./subNavbar.css";
 export const SubNavbar = () => {
   return (
     <>
-      <Navbar
-        className="horizontal-scrollable"
-        id="responsive-navbar-nav"
-        variant="dark"
-      >
-        <Nav>
+      <Navbar id="responsive-navbar-nav" variant="dark">
+        <Nav className="sub-navbar__container">
           <Nav.Link>Calendario</Nav.Link>
           <NavDropdown title="Balls" id="collasible-nav-dropdown">
             <NavDropdown.Item href="#action/3.1">Fotos</NavDropdown.Item>
