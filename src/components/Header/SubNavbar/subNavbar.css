@@ -1,0 +1,15 @@
+#responsive-navbar-nav {
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  -ms-flex-pack: center;
+  -webkit-box-pack: center;
+}
+
+@media (max-width: 990px) {
+  .sub-navbar__container {
+    overflow-x: auto;
+  }
+}
