@@ -1,24 +1,30 @@
 import React from "react";
-//import ReactPlayer from "react-player";
 import { Container } from "react-bootstrap";
 
-export const BackgroundVideo = () => {
-  const videoSource = "https://www.youtube.com/embed/Vh2q1mowUHk?controls=0";
+// @assets
+import Video from "../../../assets/videos/background-video.mp4";
 
+// @styles
+import "./backgroundVideo.css";
+
+export const BackgroundVideo = ({ blur, children }) => {
   return (
     <>
-      {/* <ReactPlayer
-        className="react-player"
-        height="100%"
-        muted
-        onReady
-        playing
-        url={"https://www.youtube.com/embed/Vh2q1mowUHk?controls=0"}
-        width="100%"
-      /> */}
-      <video autoPlay="autoplay" loop="loop" muted>
-        <source src={videoSource} />
-      </video>
+      <div className="bv__container">
+        <video
+          style={{ filter: `blur(${blur}px)`, WebkitFilter: `blur(${blur}px)` }}
+          autoPlay="autoplay"
+          loop="loop"
+          muted
+          id="video-id"
+          playsInline
+          className="bv__video"
+        >
+          <source src={Video} type="video/mp4" />
+        </video>
+        <div className="bv__content">{children}</div>
+      </div>
+      <span id="video-bottom"></span>
     </>
   );
 };

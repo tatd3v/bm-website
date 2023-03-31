@@ -1,7 +1,7 @@
 import "./App.css";
 
 // @components
-import { Header } from "./components";
+import { BackgroundVideo, Header } from "./components";
 
 // @pages
 import { Home } from "./pages";
@@ -11,9 +11,8 @@ function App() {
     <div className="App">
       {/* <ThemeProvider enableSystem={false} disableTransitionOnChange>
       <SiteContextProvider data={{ ...data?.site }}> */}
-      <Header />
+      <BackgroundVideo blur={1} children={[<Header />]} />
       <Home />
-
       {/* </SiteContextProvider>
     </ThemeProvider> */}
     </div>

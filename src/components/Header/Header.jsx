@@ -18,7 +18,7 @@ const Header = () => {
           <img
             src={Logo}
             alt="Logo"
-            style={{ maxWidth: "100%", maxHeight: "200px" }}
+            style={{ maxWidth: "50%", maxHeight: "200px" }}
           />
         </Navbar.Brand>
         <SubNavbar />
