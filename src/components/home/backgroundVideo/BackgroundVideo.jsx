@@ -17,6 +17,7 @@ export const BackgroundVideo = ({ blur, children }) => {
           loop="loop"
           muted
           id="video-id"
+          playsInline
           className="bv__video"
         >
           <source src={Video} type="video/mp4" />
