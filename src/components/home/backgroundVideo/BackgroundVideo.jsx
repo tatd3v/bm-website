@@ -1,11 +1,8 @@
-import React from "react";
-import { Container } from "react-bootstrap";
-
 // @assets
-import Video from "../../../assets/videos/background-video.mp4";
+import Video from '../../../assets/videos/background-video.mp4';
 
 // @styles
-import "./backgroundVideo.css";
+import './backgroundVideo.css';
 
 export const BackgroundVideo = ({ blur, children }) => {
   return (

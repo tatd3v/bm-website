@@ -1,14 +1,14 @@
-import React from "react";
-import { Container, Navbar } from "react-bootstrap";
+import React from 'react';
+import { Container, Navbar } from 'react-bootstrap';
 
 // @components
-import { SubNavbar } from "./SubNavbar";
+import { SubNavbar } from './SubNavbar';
 
 // @assets
-import Logo from "../../assets/LogoWhite.png";
+import Logo from '../../assets/LogoWhite.png';
 
 // @styles
-import "./header.css";
+import './header.css';
 
 const Header = () => {
   return (
@@ -18,7 +18,7 @@ const Header = () => {
           <img
             src={Logo}
             alt="Logo"
-            style={{ maxWidth: "70%", maxHeight: "200px" }}
+            style={{ maxWidth: '70%', maxHeight: '200px' }}
           />
         </Navbar.Brand>
         <SubNavbar />

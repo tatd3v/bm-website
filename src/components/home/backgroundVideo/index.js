@@ -1,3 +1,3 @@
-import { BackgroundVideo } from "./BackgroundVideo";
+import { BackgroundVideo } from './BackgroundVideo';
 
 export { BackgroundVideo };

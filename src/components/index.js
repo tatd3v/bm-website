@@ -1,4 +1,5 @@
-import { Header } from "./Header";
-import { BackgroundVideo } from "./home/backgroundVideo";
+import { BackgroundVideo } from './home/backgroundVideo';
+import { Header } from './Header';
+import { EventsCalendar } from './Calendar';
 
-export { Header, BackgroundVideo };
+export { BackgroundVideo, EventsCalendar, Header };

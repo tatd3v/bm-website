@@ -1,8 +1,9 @@
-import React from "react";
-import { Nav, Navbar, NavDropdown } from "react-bootstrap";
+import React from 'react';
+import { Nav, Navbar } from 'react-bootstrap';
+//NavDropdown
 
 // @styles
-import "./subNavbar.css";
+import './subNavbar.css';
 
 export const SubNavbar = () => {
   return (
