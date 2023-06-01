@@ -1,7 +1,3 @@
-import React from 'react';
-
-// @components
-
 // @styles
 import './home.css';
 import { EventsCalendar } from '../../components';
