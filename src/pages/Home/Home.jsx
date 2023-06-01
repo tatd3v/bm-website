@@ -1,15 +1,15 @@
-import React from "react";
+import React from 'react';
 
 // @components
-import { BackgroundVideo } from "../../components";
 
 // @styles
-import "./home.css";
+import './home.css';
+import { EventsCalendar } from '../../components';
 
 export const Home = () => {
   return (
     <div className="home__container">
-      <h1>NEWS</h1>
+      <EventsCalendar />
     </div>
   );
 };
