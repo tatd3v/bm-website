@@ -5,7 +5,7 @@ import { Container, Navbar } from "react-bootstrap";
 import { SubNavbar } from "./SubNavbar";
 
 // @assets
-import Logo from "../../assets/logo.png";
+import Logo from "../../assets/LogoWhite.png";
 
 // @styles
 import "./header.css";
@@ -18,7 +18,7 @@ const Header = () => {
           <img
             src={Logo}
             alt="Logo"
-            style={{ maxWidth: "50%", maxHeight: "200px" }}
+            style={{ maxWidth: "70%", maxHeight: "200px" }}
           />
         </Navbar.Brand>
         <SubNavbar />
