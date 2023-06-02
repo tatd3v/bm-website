@@ -2,26 +2,38 @@
 import Calendar from 'react-calendar';
 import { Container } from 'react-bootstrap';
 import { differenceInCalendarDays } from 'date-fns';
-import React, { useCallback, useRef } from 'react';
+import React, { useCallback, useRef, useState } from 'react';
 
 // @styles
 import 'react-calendar/dist/Calendar.css';
 import './calendar.scss';
 
+// @components
+import { CalendarEvent } from '../Modals';
+
 export const EventsCalendar = () => {
+  const [show, setShow] = useState(false);
+  const [eventInfo, setEventInfo] = useState({});
   const eventDates = useRef([
     {
       date: new Date(2023, 5, 11),
       id: 1,
       title: 'MATRIX',
       type: 'Mini Kiki Ball',
-      img: 'https://ibb.co/PtK1XxC',
+      image: {
+        alt: 'matrix-mini-kiki-ball',
+        src: 'https://i.ibb.co/7bPrMvy/matrix-mini-kiki-ball.jpg',
+      },
     },
     {
-      date: new Date(2023, 6, 19),
-      id: 1,
-      title: 'MATRIX mini Kiki Ball',
-      img: 'https://ibb.co/PtK1XxC',
+      date: new Date(2023, 6, 2),
+      id: 2,
+      image: {
+        alt: 'gay-pride-2023-kiki-ball',
+        src: 'https://i.ibb.co/SszQ7PC/gay-pride-flag.jpg',
+      },
+      title: 'Pride 2023',
+      type: 'Kiki Ball',
     },
   ]);
   const onClickEvent = useCallback((date) => {
@@ -29,7 +41,8 @@ export const EventsCalendar = () => {
       const eventDate = new Date(event.date);
       return eventDate.getTime() === date.getTime();
     });
-    console.log('Clicked date data:', eventData);
+    setEventInfo(eventData);
+    setShow(true);
   }, []);
   const tileClassName = useCallback(
     ({ date }) => {
@@ -69,6 +82,7 @@ export const EventsCalendar = () => {
           tileContent={tileContent}
         />
       </div>
+      <CalendarEvent info={eventInfo} show={show} setShow={setShow} />
     </Container>
   );
 };
