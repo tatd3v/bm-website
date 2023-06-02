@@ -1,5 +1,6 @@
-import { BackgroundVideo } from './home/backgroundVideo';
+import { BackgroundVideo } from './backgroundVideo';
 import { Header } from './Header';
 import { EventsCalendar } from './Calendar';
+import { CalendarEvent } from './Modals';
 
-export { BackgroundVideo, EventsCalendar, Header };
+export { BackgroundVideo, CalendarEvent, EventsCalendar, Header };

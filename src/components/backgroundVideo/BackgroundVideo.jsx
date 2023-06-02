@@ -1,5 +1,5 @@
 // @assets
-import Video from '../../../assets/videos/background-video.mp4';
+import Video from '../../assets/videos/background-video.mp4';
 
 // @styles
 import './backgroundVideo.css';
