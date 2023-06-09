@@ -10,8 +10,6 @@ export const CalendarEvent = ({ info = {}, show = true, setShow }) => {
     setShow(false);
   }, []);
 
-  console.log(info);
-
   return (
     <Modal show={show} onHide={handleClose} animation={false}>
       <Modal.Header>
