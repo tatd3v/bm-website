@@ -1,10 +1,9 @@
 .bv__container {
-  background-repeat: no-repeat;
+  position: relative;
   height: 100%;
   height: fill-available;
   height: -webkit-fill-available;
   overflow: hidden;
-  position: relative;
 }
 
 .bv__video {
@@ -29,4 +28,22 @@
   -ms-flex-pack: center;
   -webkit-box-align: start;
   -webkit-box-pack: center;
+}
+
+@media (max-width: 768px) {
+  .bv__container {
+    position: relative;
+  }
+}
+
+@media (min-wdith: 769px) {
+  .bv-video {
+    height: 100%;
+    width: 177.77777778vh; /* 100 * 16 / 9 */
+    min-width: 100%;
+    min-height: 56.25vw;
+    left: 50%; /* % of surrounding element */
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
