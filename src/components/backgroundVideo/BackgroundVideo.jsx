@@ -2,7 +2,7 @@
 import Video from '../../assets/videos/background-video.mp4';
 
 // @styles
-import './backgroundVideo.css';
+import '../home/backgroundVideo/backgroundVideo.css';
 
 export const BackgroundVideo = ({ blur, children }) => {
   return (
