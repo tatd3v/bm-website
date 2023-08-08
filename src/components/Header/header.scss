@@ -1,21 +1,11 @@
 .header__navbar {
+  background-color: transparent;
   padding: 0 !important;
   width: 100% !important;
 }
 
-.header__navbar-brand {
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  display: -ms-flexbox;
-  display: -webkit-box;
-  -ms-flex-align: center;
-  -ms-flex-pack: center;
-  -webkit-box-align: center;
-  -webkit-box-pack: center;
-}
-
 .header__nav-container {
+  color: white;
   display: flex;
   display: -ms-flexbox;
   display: -webkit-box;
@@ -25,4 +15,22 @@
   -ms-flex-direction: column;
   -webkit-box-direction: normal;
   -webkit-box-orient: vertical;
+
+  .header__navbar-brand {
+    flex: 1 0;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .header__nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .header__navbar-brand {
+    text-align: center;
+  }
 }
