@@ -12,14 +12,14 @@ import { setShowEvent } from '../../../app';
 export const CalendarEvent = ({ info = {} }) => {
   const dispatch = useDispatch();
 
-  const { eventsData } = useSelector((state) => state.data);
+  const { eventInfo } = useSelector((state) => state.data.calendar);
   const { showEvent } = useSelector((state) => state.ui.calendar);
 
   const handleClose = useCallback(() => {
     dispatch(setShowEvent(false));
   }, []);
 
-  console.log(eventsData);
+  console.log('info', info, 'eventData', eventInfo);
 
   return (
     <Modal show={showEvent} onHide={handleClose} animation={false}>
