@@ -2,7 +2,8 @@
 import Calendar from 'react-calendar';
 import { Container } from 'react-bootstrap';
 import { differenceInCalendarDays } from 'date-fns';
-import React, { useCallback, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 // @styles
 import 'react-calendar/dist/Calendar.css';
@@ -10,54 +11,82 @@ import './calendar.scss';
 
 // @components
 import { CalendarEvent } from '../Modals';
+import { useRef } from 'react';
+
+// @helpers
+// import { eventsData } from '../../helpers';
+
+// @app
+import { setShowCalendar, setShowEvent } from '../../app';
 
 export const EventsCalendar = () => {
-  const [show, setShow] = useState(false);
   const [eventInfo, setEventInfo] = useState({});
-  const eventDates = useRef([
-    {
-      date: new Date(2023, 5, 11),
-      id: 1,
-      title: 'MATRIX',
-      type: 'Mini Kiki Ball',
-      image: {
-        alt: 'matrix-mini-kiki-ball',
-        src: 'https://i.ibb.co/7bPrMvy/matrix-mini-kiki-ball.jpg',
-      },
-    },
-    {
-      date: new Date(2023, 6, 2),
-      id: 2,
-      image: {
-        alt: 'gay-pride-2023-kiki-ball',
-        src: 'https://i.ibb.co/SszQ7PC/gay-pride-flag.jpg',
-      },
-      title: 'Pride 2023',
-      type: 'Kiki Ball',
-    },
-  ]);
-  const onClickEvent = useCallback((date) => {
-    const eventData = eventDates.current.find((event) => {
-      const eventDate = new Date(event.date);
-      return eventDate.getTime() === date.getTime();
-    });
-    setEventInfo(eventData);
-    setShow(true);
+
+  const eventsData = useSelector((state) => state.data.eventsData);
+  const { showCalendar, showEventInfo } = useSelector(
+    (state) => state.ui.calendar
+  );
+
+  const dispatch = useDispatch();
+
+  const calendarRef = useRef(null);
+
+  useEffect(() => {
+    if (showCalendar) {
+      const handleOutsideClick = (event) => {
+        console.log(
+          { showEventInfo },
+          event,
+          { calendarRef },
+          'event',
+          event.target.classList.contains(
+            'react-calendar' && 'react-calendar__month-view__days'
+          ),
+          event.target.classList.contains('nav-link')
+        );
+        if (event.target.classList.contains('react-calendar')) {
+          return;
+        }
+        if (event.target.classList.contains('nav-link')) {
+          return;
+        }
+
+        dispatch(setShowCalendar(true));
+      };
+
+      window.addEventListener('click', handleOutsideClick);
+
+      return () => {
+        window.removeEventListener('click', handleOutsideClick);
+      };
+    }
   }, []);
+
+  const onClickEvent = useCallback(
+    (date) => {
+      const eventData = eventsData?.find((event) => {
+        const eventDate = new Date(event.date);
+        return eventDate.getTime() === date.getTime();
+      });
+      setEventInfo(eventData);
+      dispatch(setShowEvent(true));
+    },
+    [eventsData]
+  );
+
   const tileClassName = useCallback(
     ({ date }) => {
-      const highlighted = eventDates.current.some(
-        (event) => differenceInCalendarDays(date, event.date) === 0
+      const highlighted = eventsData?.some(
+        (event) => differenceInCalendarDays(date, new Date(event.date)) === 0
       );
       return highlighted ? 'react-calendar__tile--hasActive' : null;
     },
-    [eventDates]
+    [eventsData]
   );
-
   const tileContent = useCallback(
     ({ date, view }) => {
-      const highlighted = eventDates.current.find(
-        (event) => differenceInCalendarDays(date, event.date) === 0
+      const highlighted = eventsData?.find(
+        (event) => differenceInCalendarDays(date, new Date(event.date)) === 0
       );
       const day = date.toLocaleString('en-US', { weekday: 'short' });
       const content =
@@ -68,13 +97,12 @@ export const EventsCalendar = () => {
         <p className="react-calendar__tile-content--hasActive">{content}</p>
       ) : null;
     },
-    [eventDates]
+    [eventsData]
   );
 
   return (
     <Container>
-      <h1 className="text-center">Calendario Ballroom Medellin</h1>
-      <div className="calendar-container">
+      <div className="calendar-container" ref={calendarRef}>
         <Calendar
           locale="es-CO"
           onClickDay={onClickEvent}
@@ -82,7 +110,7 @@ export const EventsCalendar = () => {
           tileContent={tileContent}
         />
       </div>
-      <CalendarEvent info={eventInfo} show={show} setShow={setShow} />
+      <CalendarEvent info={eventInfo} />
     </Container>
   );
 };
