@@ -1,16 +1,23 @@
+// @vendors
 import React from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
-//NavDropdown
+import { useDispatch } from 'react-redux';
 
 // @styles
 import './subNavbar.css';
 
+// @app
+import { setShowCalendar } from '../../../app';
+
 export const SubNavbar = () => {
+  const dispatch = useDispatch();
   return (
     <>
       <Navbar id="responsive-navbar-nav" variant="dark">
         <Nav className="sub-navbar__container">
-          <Nav.Link>Calendario</Nav.Link>
+          <Nav.Link onClick={() => dispatch(setShowCalendar(true))}>
+            Calendario
+          </Nav.Link>
           {/*<NavDropdown title="Balls" id="collasible-nav-dropdown">
             <NavDropdown.Item href="#action/3.1">Fotos</NavDropdown.Item>
             <NavDropdown.Item href="#action/3.3">Vdeos</NavDropdown.Item>

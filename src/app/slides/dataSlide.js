@@ -1,14 +1,26 @@
-// @vendorss
+// @vendors
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = {};
+const initialState = {
+  calendar: {
+    eventsData: [],
+    eventInfo: {},
+  },
+};
 
 const dataSlice = createSlice({
   name: 'data',
   initialState: initialState,
-  reducers: {},
+  reducers: {
+    setEventsData: (state, action) => {
+      state.calendar.eventsData = action.payload;
+    },
+    setEventInfo: (state, action) => {
+      state.calendar.eventInfo = action.payload;
+    },
+  },
 });
 
-//export const {} = dataSlice.actions;
+export const { setEventsData, setEventInfo } = dataSlice.actions;
 
 export default dataSlice.reducer;
