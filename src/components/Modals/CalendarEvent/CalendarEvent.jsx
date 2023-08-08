@@ -1,17 +1,28 @@
 // @vendors
 import { Image, Modal } from 'react-bootstrap';
 import React, { useCallback } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 // @styles
 import './calendarEvent.scss';
 
-export const CalendarEvent = ({ info = {}, show = true, setShow }) => {
+// @app
+import { setShowEvent } from '../../../app';
+
+export const CalendarEvent = ({ info = {} }) => {
+  const dispatch = useDispatch();
+
+  const { eventsData } = useSelector((state) => state.data);
+  const { showEvent } = useSelector((state) => state.ui.calendar);
+
   const handleClose = useCallback(() => {
-    setShow(false);
+    dispatch(setShowEvent(false));
   }, []);
 
+  console.log(eventsData);
+
   return (
-    <Modal show={show} onHide={handleClose} animation={false}>
+    <Modal show={showEvent} onHide={handleClose} animation={false}>
       <Modal.Header>
         <Modal.Title>{info?.title || 'Hack the System'}</Modal.Title>
         <h6>{info?.type || 'Kiki Ball'}</h6>
