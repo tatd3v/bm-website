@@ -2,7 +2,7 @@
 import Calendar from 'react-calendar';
 import { Container } from 'react-bootstrap';
 import { differenceInCalendarDays } from 'date-fns';
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 // @styles
@@ -17,12 +17,12 @@ import { useRef } from 'react';
 // import { eventsData } from '../../helpers';
 
 // @app
-import { setShowCalendar, setShowEvent } from '../../app';
+import { setShowCalendar, setEventInfo, setShowEvent } from '../../app';
 
 export const EventsCalendar = () => {
-  const [eventInfo, setEventInfo] = useState({});
+  //const [eventInfo, setEventInfo] = useState({});
 
-  const eventsData = useSelector((state) => state.data.eventsData);
+  const { eventsData, eventInfo } = useSelector((state) => state.data.calendar);
   const { showCalendar, showEvent } = useSelector((state) => state.ui.calendar);
 
   const dispatch = useDispatch();
@@ -59,7 +59,7 @@ export const EventsCalendar = () => {
         const eventDate = new Date(event.date);
         return eventDate.getTime() === date.getTime();
       });
-      setEventInfo(eventData);
+      dispatch(setEventInfo(eventData));
       dispatch(setShowEvent(true));
     },
     [eventsData]
@@ -101,7 +101,7 @@ export const EventsCalendar = () => {
           tileContent={tileContent}
         />
       </div>
-      <CalendarEvent info={eventInfo} />
+      {showEvent && <CalendarEvent info={eventInfo} />}
     </Container>
   );
 };
