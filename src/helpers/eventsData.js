@@ -20,11 +20,14 @@ export const eventsData = [
     type: 'Kiki Ball',
   },
   {
-    date: new Date(2023, 7, 5).toISOString(),
+    date: new Date(2023, 7, 18).toISOString(),
     id: 3,
-    image: {},
-    title: 'Miloy 007',
-    type: 'Vogue Night',
+    image: {
+      alt: 'erotik-kiki-ball',
+      src: 'https://i.ibb.co/M5Dz8Cw/erotik-kiki-ball.jpg',
+    },
+    title: 'Erotik',
+    type: 'Kiki Ball',
   },
   {
     date: new Date(2023, 8, 16).toISOString(),
@@ -36,8 +39,11 @@ export const eventsData = [
   {
     date: new Date(2023, 9, 15).toISOString(),
     id: 5,
-    image: {},
-    title: 'House of Druzhinin',
+    image: {
+      alt: 'dynasty-kiki-ball',
+      src: 'https://i.ibb.co/1JcSR6L/dynasty-kiki-ball.jpg',
+    },
+    title: 'Dynasty',
     type: 'Kiki Ball',
   },
   {
