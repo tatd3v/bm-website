@@ -23,44 +23,35 @@ export const EventsCalendar = () => {
   const [eventInfo, setEventInfo] = useState({});
 
   const eventsData = useSelector((state) => state.data.eventsData);
-  const { showCalendar, showEventInfo } = useSelector(
-    (state) => state.ui.calendar
-  );
+  const { showCalendar, showEvent } = useSelector((state) => state.ui.calendar);
 
   const dispatch = useDispatch();
 
   const calendarRef = useRef(null);
 
   useEffect(() => {
+    const handleOutsideClick = (event) => {
+      const clickedOutsideCalendar =
+        calendarRef.current && !calendarRef.current.contains(event.target);
+
+      if (
+        clickedOutsideCalendar &&
+        !event.target.classList.contains('nav-link') &&
+        !event.target.classList.contains('modal') &&
+        !showEvent
+      ) {
+        dispatch(setShowCalendar(false));
+      }
+    };
+
     if (showCalendar) {
-      const handleOutsideClick = (event) => {
-        console.log(
-          { showEventInfo },
-          event,
-          { calendarRef },
-          'event',
-          event.target.classList.contains(
-            'react-calendar' && 'react-calendar__month-view__days'
-          ),
-          event.target.classList.contains('nav-link')
-        );
-        if (event.target.classList.contains('react-calendar')) {
-          return;
-        }
-        if (event.target.classList.contains('nav-link')) {
-          return;
-        }
-
-        dispatch(setShowCalendar(true));
-      };
-
       window.addEventListener('click', handleOutsideClick);
-
-      return () => {
-        window.removeEventListener('click', handleOutsideClick);
-      };
     }
-  }, []);
+
+    return () => {
+      window.removeEventListener('click', handleOutsideClick);
+    };
+  }, [showCalendar, showEvent]);
 
   const onClickEvent = useCallback(
     (date) => {
@@ -101,8 +92,8 @@ export const EventsCalendar = () => {
   );
 
   return (
-    <Container>
-      <div className="calendar-container" ref={calendarRef}>
+    <Container className="calendar-container">
+      <div className="calendar-wrap" ref={calendarRef}>
         <Calendar
           locale="es-CO"
           onClickDay={onClickEvent}
