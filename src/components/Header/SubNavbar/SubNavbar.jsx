@@ -8,7 +8,11 @@ import './subNavbar.css';
 export const SubNavbar = () => {
   return (
     <>
-      <Navbar id="responsive-navbar-nav" variant="dark">
+      <Navbar.Collapse
+        className="sub-navbar__collapse"
+        id="navbarScroll"
+        variant="dark"
+      >
         <Nav className="sub-navbar__container">
           <Nav.Link>Calendario</Nav.Link>
           {/*<NavDropdown title="Balls" id="collasible-nav-dropdown">
@@ -29,7 +33,7 @@ export const SubNavbar = () => {
           <Nav.Link>Aliados</Nav.Link>
           <Nav.Link>Contacto</Nav.Link>*/}
         </Nav>
-      </Navbar>
+      </Navbar.Collapse>
     </>
   );
 };
