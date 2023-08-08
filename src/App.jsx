@@ -1,24 +1,39 @@
+// @vendors
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
+// @src
 import './App.css';
 
 // @components
-//import { BackgroundVideo, Header } from './components';
+import { BackgroundVideo, EventsCalendar, Header } from './components';
 
 // @pages
-import { Home } from './pages';
+//import { Home } from './pages';
 
-function App() {
+// @app
+import { setEventsData } from './app';
+
+// @helpers
+import { eventsData } from './helpers';
+
+const App = () => {
+  const dispatch = useDispatch();
+  const showCalendar = useSelector((state) => state.ui.calendar.showCalendar);
+
+  useEffect(() => {
+    dispatch(setEventsData(eventsData));
+  }, []);
+
   return (
     <div className="App">
-      {/* <ThemeProvider enableSystem={false} disableTransitionOnChange>
-      <SiteContextProvider data={{ ...data?.site }}> */}
-      {/* <BackgroundVideo blur={1}>
+      <BackgroundVideo blur={1}>
         <Header />
-      </BackgroundVideo> */}
-      <Home />
-      {/* </SiteContextProvider>
-    </ThemeProvider> */}
+        {showCalendar && <EventsCalendar />}
+      </BackgroundVideo>
+      {/* <Home /> */}
     </div>
   );
-}
+};
 
 export default App;
