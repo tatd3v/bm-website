@@ -1,3 +1,4 @@
+import { setEventsData, setShowCalendar, setShowEvent } from './slides';
 import { store } from './store';
 
-export { store };
+export { setEventsData, setShowCalendar, setShowEvent, store };
