@@ -3,7 +3,8 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   calendar: {
-    eventData: {},
+    isMobile: false,
+    showCalendar: false,
     showEvent: false,
   },
 };
@@ -12,8 +13,8 @@ const uiSlice = createSlice({
   name: 'ui',
   initialState: initialState,
   reducers: {
-    setEventData: (state, action) => {
-      state.calendar.eventData = action.payload;
+    setShowCalendar: (state, action) => {
+      state.calendar.showCalendar = action.payload;
     },
     setShowEvent: (state, action) => {
       state.calendar.showEvent = action.payload;
@@ -21,6 +22,6 @@ const uiSlice = createSlice({
   },
 });
 
-//export const {} = uiSlice.actions;
+export const { setShowCalendar, setShowEvent } = uiSlice.actions;
 
 export default uiSlice.reducer;
