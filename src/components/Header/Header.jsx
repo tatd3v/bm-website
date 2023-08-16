@@ -12,9 +12,9 @@ import './header.scss';
 
 const Header = () => {
   return (
-    <Navbar className="header__navbar" bg="transparent" expand="lg">
+    <Navbar className="header__navbar bg-light" bg="transparent" expand="lg">
       <Container className="header__nav-container" fluid>
-        <div className="d-flex justify-content-between align-items-center w-100">
+        <div className="d-flex flex-column align-items-center w-100">
           <Navbar.Brand href="/" className="header__navbar-brand my-lg-0">
             <img
               src={Logo}
@@ -22,7 +22,9 @@ const Header = () => {
               style={{ maxWidth: '70%', maxHeight: '200px' }}
             />
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="navbarScroll" />
+          <Navbar.Toggle aria-controls="navbarScroll" style={{
+            borderColor: 'white'
+          }} />
         </div>
         <SubNavbar />
       </Container>

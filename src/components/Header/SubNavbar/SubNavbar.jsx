@@ -3,7 +3,7 @@ import { Nav, Navbar } from 'react-bootstrap';
 //NavDropdown
 
 // @styles
-import './subNavbar.css';
+import './subNavbar.scss';
 
 export const SubNavbar = () => {
   return (
