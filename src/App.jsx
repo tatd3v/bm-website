@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import './App.css';
 
 // @components
-import { BackgroundVideo, EventsCalendar, Header } from './components';
+import { BackgroundVideo, Dictionary, EventsCalendar, Header } from './components';
 
 // @pages
 //import { Home } from './pages';
@@ -19,7 +19,7 @@ import { eventsData } from './helpers';
 
 const App = () => {
   const dispatch = useDispatch();
-  const showCalendar = useSelector((state) => state.ui.calendar.showCalendar);
+  const { showCalendar, showDictionary } = useSelector((state) => state.ui.calendar);
 
   useEffect(() => {
     dispatch(setEventsData(eventsData));
@@ -30,6 +30,7 @@ const App = () => {
       <BackgroundVideo blur={1}>
         <Header />
         {showCalendar && <EventsCalendar />}
+        {showDictionary && <Dictionary />}
       </BackgroundVideo>
       {/* <Home /> */}
     </div>
