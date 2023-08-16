@@ -1,4 +1,5 @@
-#responsive-navbar-nav {
+.sub-navbar__collapse {
+  background-color: rgba(0, 0, 0, 0.4);
   display: -ms-flexbox;
   display: -webkit-box;
   display: flex;
@@ -6,6 +7,14 @@
   width: 100%;
   -ms-flex-pack: center;
   -webkit-box-pack: center;
+
+  .nav-link {
+    color: var(--bs-gray-500);
+  }
+
+  .nav-link:hover, .nav-link:focus {
+    color: var(--bs-gray-600);
+  }
 }
 
 @media (max-width: 990px) {
