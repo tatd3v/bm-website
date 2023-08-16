@@ -1,8 +1,11 @@
 // components
-import {SearchBox} from "../ui"
+import { Container } from "react-bootstrap";
+import { SearchBox } from "../ui/SearchBox"
 
 export const Dictionary = () => {
     return (
-        <SearchBox />
+        <Container className="d-flex justify-content-center">
+            <SearchBox />
+        </Container>
     );
 };
