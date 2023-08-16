@@ -1,6 +1,8 @@
 import { BackgroundVideo } from './backgroundVideo';
-import { Header } from './Header';
-import { EventsCalendar } from './Calendar';
 import { CalendarEvent } from './Modals';
+import { Dictionary } from "./Dictionary"
+import { EventsCalendar } from './Calendar';
+import { Header } from './Header';
+import { SearchBox } from './ui';
 
-export { BackgroundVideo, CalendarEvent, EventsCalendar, Header };
+export { BackgroundVideo, CalendarEvent, Dictionary, EventsCalendar, Header, SearchBox };
