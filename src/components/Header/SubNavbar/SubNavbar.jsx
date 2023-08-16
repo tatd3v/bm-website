@@ -4,7 +4,7 @@ import { Nav, Navbar } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 
 // @styles
-import './subNavbar.css';
+import './subNavbar.scss';
 
 // @app
 import { setShowCalendar } from '../../../app';
@@ -13,7 +13,11 @@ export const SubNavbar = () => {
   const dispatch = useDispatch();
   return (
     <>
-      <Navbar id="responsive-navbar-nav" variant="dark">
+      <Navbar.Collapse
+        className="sub-navbar__collapse"
+        id="navbarScroll"
+        variant="dark"
+      >
         <Nav className="sub-navbar__container">
           <Nav.Link onClick={() => dispatch(setShowCalendar(true))}>
             Calendario
@@ -36,7 +40,7 @@ export const SubNavbar = () => {
           <Nav.Link>Aliados</Nav.Link>
           <Nav.Link>Contacto</Nav.Link>*/}
         </Nav>
-      </Navbar>
+      </Navbar.Collapse>
     </>
   );
 };
