@@ -22,9 +22,12 @@ const Header = () => {
               style={{ maxWidth: '70%', maxHeight: '200px' }}
             />
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="navbarScroll" style={{
-            borderColor: 'white'
-          }} />
+          <Navbar.Toggle
+            aria-controls="navbarScroll"
+            style={{
+              borderColor: 'white',
+            }}
+          />
         </div>
         <SubNavbar />
       </Container>
