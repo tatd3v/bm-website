@@ -1,3 +1,5 @@
+import { capitalizeFirstLetter } from './capitalizeFirstLetter';
 import { eventsData } from './eventsData';
+import { words } from './words';
 
-export { eventsData };
+export { capitalizeFirstLetter, eventsData, words };
