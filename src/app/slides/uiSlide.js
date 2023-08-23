@@ -8,6 +8,9 @@ const initialState = {
     showDictionary: false,
     showEvent: false,
   },
+  header: {
+    showSubNavbar: false,
+  },
 };
 
 const uiSlice = createSlice({
@@ -23,9 +26,17 @@ const uiSlice = createSlice({
     setShowEvent: (state, action) => {
       state.calendar.showEvent = action.payload;
     },
+    setShowSubNavbar: (state) => {
+      state.header.showSubNavbar = !state.header.showSubNavbar;
+    },
   },
 });
 
-export const { setShowCalendar, setShowDictionary, setShowEvent } = uiSlice.actions;
+export const {
+  setShowCalendar,
+  setShowDictionary,
+  setShowEvent,
+  setShowSubNavbar,
+} = uiSlice.actions;
 
 export default uiSlice.reducer;

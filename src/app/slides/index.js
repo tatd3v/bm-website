@@ -1,5 +1,16 @@
-import dataSlide, { setEventsData, setEventInfo } from './dataSlide';
-import uiSlide, { setShowCalendar, setShowDictionary, setShowEvent } from './uiSlide';
+import dataSlide, {
+  setEventsData,
+  setEventInfo,
+  setSearchedWord,
+  setWasFound,
+  setWordsData,
+} from './dataSlide';
+import uiSlide, {
+  setShowCalendar,
+  setShowDictionary,
+  setShowEvent,
+  setShowSubNavbar,
+} from './uiSlide';
 
 export {
   dataSlide,
@@ -7,6 +18,10 @@ export {
   setEventInfo,
   setShowCalendar,
   setShowDictionary,
+  setSearchedWord,
   setShowEvent,
+  setShowSubNavbar,
+  setWasFound,
+  setWordsData,
   uiSlide,
 };
