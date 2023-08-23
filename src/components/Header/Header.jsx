@@ -9,8 +9,18 @@ import Logo from '../../assets/LogoWhite.png';
 
 // @styles
 import './header.scss';
+import { useDispatch } from 'react-redux';
+
+// @app
+import { setShowSubNavbar } from '../../app';
 
 const Header = () => {
+  const dispatch = useDispatch();
+
+  const toggleSubNavbar = () => {
+    dispatch(setShowSubNavbar());
+  };
+
   return (
     <Navbar className="header__navbar bg-light" bg="transparent" expand="lg">
       <Container className="header__nav-container" fluid>
@@ -22,9 +32,13 @@ const Header = () => {
               style={{ maxWidth: '70%', maxHeight: '200px' }}
             />
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="navbarScroll" style={{
-            borderColor: 'white'
-          }} />
+          <Navbar.Toggle
+            aria-controls="navbarScroll"
+            style={{
+              borderColor: 'white',
+            }}
+            onClick={toggleSubNavbar}
+          />
         </div>
         <SubNavbar />
       </Container>
