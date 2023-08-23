@@ -3,6 +3,11 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 // @src
+// @vendors
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
+// @src
 import './App.css';
 
 // @components
