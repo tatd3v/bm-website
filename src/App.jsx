@@ -6,23 +6,31 @@ import { useDispatch, useSelector } from 'react-redux';
 import './App.css';
 
 // @components
-import { BackgroundVideo, Dictionary, EventsCalendar, Header } from './components';
+import {
+  BackgroundVideo,
+  Dictionary,
+  EventsCalendar,
+  Header,
+} from './components';
 
 // @pages
 //import { Home } from './pages';
 
 // @app
-import { setEventsData } from './app';
+import { setEventsData, setWordsData } from './app';
 
 // @helpers
-import { eventsData } from './helpers';
+import { eventsData, words } from './helpers';
 
 const App = () => {
   const dispatch = useDispatch();
-  const { showCalendar, showDictionary } = useSelector((state) => state.ui.calendar);
+  const { showCalendar, showDictionary } = useSelector(
+    (state) => state.ui.calendar
+  );
 
   useEffect(() => {
     dispatch(setEventsData(eventsData));
+    dispatch(setWordsData(words));
   }, []);
 
   return (
