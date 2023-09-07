@@ -21,6 +21,7 @@ import { setEventsData, setWordsData } from './app';
 
 // @helpers
 import { eventsData, words } from './helpers';
+import { setIsMobile } from './app/slides/uiSlide';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -31,6 +32,7 @@ const App = () => {
   useEffect(() => {
     dispatch(setEventsData(eventsData));
     dispatch(setWordsData(words));
+    dispatch(setIsMobile(window.innerWidth <= 990 ? true : false));
   }, []);
 
   return (
