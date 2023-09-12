@@ -1,8 +1,6 @@
 .bv__container {
-  position: relative;
   height: 100%;
-  height: fill-available;
-  height: -webkit-fill-available;
+  position: relative;
   overflow: hidden;
 
   .bv__content {
@@ -26,7 +24,9 @@
 }
 
 .bv__video {
-  width: 100%;
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
 }
 
 @media (max-width: 768px) {
