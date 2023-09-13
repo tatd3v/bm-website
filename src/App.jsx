@@ -1,6 +1,8 @@
 // @vendors
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Routes } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
 // @src
 import './App.css';
@@ -13,15 +15,15 @@ import {
   Header,
 } from './components';
 
-// @pages
-//import { Home } from './pages';
-
 // @app
 import { setEventsData, setWordsData } from './app';
 
 // @helpers
 import { eventsData, words } from './helpers';
 import { setIsMobile } from './app/slides/uiSlide';
+
+// @pages
+import { Gallery } from './pages';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -42,7 +44,9 @@ const App = () => {
         {showCalendar && <EventsCalendar />}
         {showDictionary && <Dictionary />}
       </BackgroundVideo>
-      {/* <Home /> */}
+      <Routes>
+        <Route path="gallery/:eventPath" element={<Gallery />} />
+      </Routes>
     </div>
   );
 };
