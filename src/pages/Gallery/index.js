@@ -1,3 +1,5 @@
-import { Gallery } from './Gallery';
+import { GalleryByBall } from './GalleryByBall';
+import { PhotosPage } from './Photos';
+import { VideosPage } from './Videos';
 
-export { Gallery };
+export { GalleryByBall, PhotosPage, VideosPage };
