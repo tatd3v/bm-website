@@ -33,7 +33,7 @@ const App = () => {
       element: <RootLayout />,
       errorElement: <ErrorPage />,
       children: [
-        { path: '/', element: <HomePage /> },
+        { index: true, element: <HomePage /> },
         { path: '/gallery', element: <GalleryLayout /> },
         { path: '/gallery/:eventPath', element: <GalleryByBall /> },
       ],
