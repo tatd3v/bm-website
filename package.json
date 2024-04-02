@@ -11,6 +11,7 @@
     "prettier": "prettier --write ."
   },
   "dependencies": {
+    "@hugeicons/hugeicons-pro": "^0.0.6",
     "@reduxjs/toolkit": "^1.9.5",
     "date-fns": "^2.30.0",
     "react": "^18.2.0",
@@ -18,7 +19,8 @@
     "react-calendar": "^4.2.1",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.7",
-    "react-router-dom": "^6.11.2"
+    "react-router-dom": "^6.11.2",
+    "react-sticky": "^6.0.3"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.21.8",
