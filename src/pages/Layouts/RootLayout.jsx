@@ -1,6 +1,7 @@
 // @vendors
 import { Outlet } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { StickyContainer, Sticky } from 'react-sticky';
 
 // @components
 import {
@@ -16,13 +17,15 @@ export const RootLayout = () => {
   );
   return (
     <>
-      <BackgroundVideo blur={1}>
-        <Header />
-        {showCalendar && <EventsCalendar />}
-        {showDictionary && <Dictionary />}
+      <StickyContainer>
+        <BackgroundVideo blur={1}>
+          <Header />
+          {showCalendar && <EventsCalendar />}
+          {showDictionary && <Dictionary />}
 
-        <Outlet />
-      </BackgroundVideo>
+          <Outlet />
+        </BackgroundVideo>
+      </StickyContainer>
     </>
   );
 };
