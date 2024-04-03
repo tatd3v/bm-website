@@ -3,13 +3,5 @@ import { CalendarEvent } from './Modals';
 import { Dictionary } from './Dictionary';
 import { EventsCalendar } from './Calendar';
 import { Header } from './Header';
-import { StickyNav } from './BottomSticky';
 
-export {
-  BackgroundVideo,
-  CalendarEvent,
-  Dictionary,
-  EventsCalendar,
-  Header,
-  StickyNav,
-};
+export { BackgroundVideo, CalendarEvent, Dictionary, EventsCalendar, Header };
