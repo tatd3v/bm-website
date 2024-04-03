@@ -16,7 +16,7 @@ export const RootLayout = () => {
     (state) => state.ui.calendar
   );
   return (
-    <>
+    <div>
       <BackgroundVideo blur={1}>
         <Header />
 
@@ -24,8 +24,8 @@ export const RootLayout = () => {
         {showDictionary && <Dictionary />}
 
         <Outlet />
+        <StickyNav />
       </BackgroundVideo>
-      <StickyNav />
-    </>
+    </div>
   );
 };
