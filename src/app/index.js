@@ -6,6 +6,7 @@ import {
   setShowDictionary,
   setShowEvent,
   setShowSubNavbar,
+  setSocialMedia,
   setWasFound,
   setWordsData,
 } from './slides';
@@ -19,6 +20,7 @@ export {
   setShowCalendar,
   setShowEvent,
   setShowSubNavbar,
+  setSocialMedia,
   setWasFound,
   setWordsData,
   store,
