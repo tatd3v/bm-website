@@ -10,7 +10,10 @@ const initialState = {
   header: {
     showSubNavbar: false,
   },
+<<<<<<< HEAD
   isMobile: false,
+=======
+>>>>>>> main
 };
 
 const uiSlice = createSlice({
@@ -36,7 +39,10 @@ const uiSlice = createSlice({
 });
 
 export const {
+<<<<<<< HEAD
   setIsMobile,
+=======
+>>>>>>> main
   setShowCalendar,
   setShowDictionary,
   setShowEvent,

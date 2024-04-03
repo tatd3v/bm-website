@@ -2,7 +2,6 @@ import dataSlide, {
   setEventsData,
   setEventInfo,
   setSearchedWord,
-  setSocialMedia,
   setWasFound,
   setWordsData,
 } from './dataSlide';
@@ -22,7 +21,6 @@ export {
   setSearchedWord,
   setShowEvent,
   setShowSubNavbar,
-  setSocialMedia,
   setWasFound,
   setWordsData,
   uiSlide,

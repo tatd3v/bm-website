@@ -15,29 +15,18 @@ const initialState = {
     wasFound: false,
     wordsData: [],
   },
-  bottomSticky: {
-    socialMedia: [],
-  },
 };
 
 const dataSlice = createSlice({
   name: 'data',
   initialState: initialState,
   reducers: {
-    selectSocialMedia: (state) => {
-      const logos = state.bottomSticky.socialMedia.map((logo) => logo);
-
-      return logos;
-    },
     setEventsData: (state, action) => {
       state.calendar.eventsData = action.payload;
       state.calendar.eventsByYear = groupByYear(action.payload);
     },
     setEventInfo: (state, action) => {
       state.calendar.eventInfo = action.payload;
-    },
-    setSocialMedia: (state, action) => {
-      state.bottomSticky.socialMedia = action.payload;
     },
     setSearchedWord: (state, action) => {
       state.dictionary.searchedWord = action.payload;
@@ -52,10 +41,8 @@ const dataSlice = createSlice({
 });
 
 export const {
-  selectSocialMedia,
   setEventsData,
   setEventInfo,
-  setSocialMedia,
   setSearchedWord,
   setWasFound,
   setWordsData,
