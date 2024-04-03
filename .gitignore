@@ -25,3 +25,4 @@ dist-ssr
 
 # Heavy Assets
 *.webm
+.vercel
