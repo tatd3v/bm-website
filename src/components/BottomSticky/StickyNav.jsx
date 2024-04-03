@@ -1,10 +1,3 @@
-// @vendors
-import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-
-// @app
-import { setSocialMedia } from '../../app';
-
 // @components
 import { StickyIcon } from './StickyIcon';
 
@@ -15,15 +8,18 @@ import { logos } from './iconsData';
 import './stickyNav.scss';
 
 export const StickyNav = () => {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(setSocialMedia(logos));
-  }, []);
-
   return (
     <div className="sn_sticky-nav-container">
-      <StickyIcon />
+      {logos.map((logo, index) => {
+        return (
+          <StickyIcon
+            key={index}
+            name={logo.name}
+            source={logo.source}
+            url={logo.url}
+          />
+        );
+      })}
     </div>
   );
 };
