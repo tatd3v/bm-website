@@ -2,9 +2,9 @@
 import { useState } from 'react';
 
 // @styles
-import './stickyIcon.scss';
+import './socialMediaIcon.scss';
 
-export const StickyIcon = ({ name, source, url }) => {
+export const SocialMediaIcon = ({ name, source, url }) => {
   const [clicked, setClicked] = useState(false);
 
   const handleClick = () => {
@@ -15,15 +15,11 @@ export const StickyIcon = ({ name, source, url }) => {
   };
 
   return (
-    <div
-      className={
-        clicked ? 'sticky-icon_container clicked' : 'sticky-icon_container'
-      }
-    >
+    <div className={clicked ? 'smi_container clicked' : 'smi_container'}>
       <img
         alt={name}
         className={
-          clicked ? 'si_social-media-logo clicked' : 'si_social-media-logo'
+          clicked ? 'smi_social-m edia-logo clicked' : 'smi_social-media-logo'
         }
         src={`../../${source}`}
         loading="lazy"

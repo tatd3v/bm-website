@@ -1,4 +1,4 @@
-import { instagramLogo, tikTokLogo, youtubeLogo } from '../../assets/images';
+import { instagramLogo, tikTokLogo, youtubeLogo } from '../../../assets/images';
 
 export const logos = [
   {

@@ -3,9 +3,10 @@ import { Container, Navbar } from 'react-bootstrap';
 
 // @components
 import { SubNavbar } from './SubNavbar';
+import { SocialMediaNav } from './SocialMediaNavBar';
 
 // @assets
-import Logo from '../../assets/LogoWhite.png';
+import Logo from '../../assets/ShortLogoWhite.png';
 
 // @styles
 import './header.scss';
@@ -29,9 +30,10 @@ const Header = () => {
             <img
               src={Logo}
               alt="Logo"
-              style={{ maxWidth: '70%', maxHeight: '200px' }}
+              style={{ maxWidth: '75%', maxHeight: '130px' }}
             />
           </Navbar.Brand>
+          <SocialMediaNav />
           <Navbar.Toggle
             aria-controls="navbarScroll"
             style={{

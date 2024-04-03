@@ -1,18 +1,18 @@
 // @components
-import { StickyIcon } from './StickyIcon';
+import { SocialMediaIcon } from './SocialMediaIcon';
 
 // @data
 import { logos } from './iconsData';
 
 // @styles
-import './stickyNav.scss';
+import './socialMediaNav.scss';
 
-export const StickyNav = () => {
+export const SocialMediaNav = () => {
   return (
-    <div className="sn_sticky-nav-container">
+    <div className="smn_container">
       {logos.map((logo, index) => {
         return (
-          <StickyIcon
+          <SocialMediaIcon
             key={index}
             name={logo.name}
             source={logo.source}

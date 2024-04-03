@@ -8,7 +8,6 @@ import {
   Dictionary,
   EventsCalendar,
   Header,
-  StickyNav,
 } from '../../components';
 
 export const RootLayout = () => {
@@ -24,7 +23,6 @@ export const RootLayout = () => {
         {showDictionary && <Dictionary />}
 
         <Outlet />
-        <StickyNav />
       </BackgroundVideo>
     </div>
   );

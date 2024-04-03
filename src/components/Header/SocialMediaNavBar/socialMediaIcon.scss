@@ -1,0 +1,26 @@
+.smi_container {
+  display: flex;
+  align-items: center;
+}
+
+.smi_social-media-logo {
+  max-height: 25px;
+  max-width: 25px;
+}
+
+@media (min-width: 768px) {
+  .smi_social-media-logo {
+    transition: transform 0.3s ease;
+  }
+
+  .smi_social-media-logo:hover {
+    transform: scale(1.2);
+  }
+}
+
+@media (max-width: 768px) {
+  .smi_social-media-logo {
+    max-height: 40px;
+    max-width: 40px;
+  }
+}
