@@ -1,0 +1,18 @@
+.sticky-icon_container {
+  flex: 1;
+  margin-bottom: 10px;
+}
+
+.si_social-media-logo {
+  max-height: 50px;
+}
+
+@media (min-width: 768px) {
+  .si_social-media-logo {
+    transition: transform 0.3s ease;
+  }
+
+  .si_social-media-logo:hover {
+    transform: scale(1.2);
+  }
+}
