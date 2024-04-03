@@ -6,3 +6,11 @@
   max-width: fit-content;
   padding-bottom: 5px;
 }
+
+.smn_container :nth-child(3) {
+  order: 2;
+}
+
+.smn_container :nth-child(2) {
+  order: 3; /* Change the order of the second item to 3 */
+}
