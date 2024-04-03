@@ -1,6 +1,7 @@
 {
   "name": "bm-website",
   "private": true,
+  "packageManager": "pnpm@8.10.2",
   "version": "0.0.0",
   "type": "commonjs",
   "scripts": {
