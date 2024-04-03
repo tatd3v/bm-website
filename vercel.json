@@ -1,0 +1,5 @@
+{
+  "framework": "react",
+  "installCommand": "pnpm install",
+  "outputDirectory": "dist"
+}
