@@ -5,4 +5,7 @@ import eslintPlugin from 'vite-plugin-eslint';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [eslintPlugin(), react()],
+  server: {
+    host: true
+  }
 });

@@ -1,8 +1,12 @@
 // @vendors
 import { createSlice } from '@reduxjs/toolkit';
 
+// @helpers
+import { groupByYear } from '../../helpers';
+
 const initialState = {
   calendar: {
+    eventsByYear: {},
     eventsData: [],
     eventInfo: {},
   },
@@ -19,6 +23,7 @@ const dataSlice = createSlice({
   reducers: {
     setEventsData: (state, action) => {
       state.calendar.eventsData = action.payload;
+      state.calendar.eventsByYear = groupByYear(action.payload);
     },
     setEventInfo: (state, action) => {
       state.calendar.eventInfo = action.payload;

@@ -1,3 +1,13 @@
-import { Home } from './Home';
+import { ErrorPage } from './Error';
+import { GalleryByBall, PhotosPage, VideosPage } from './Gallery';
+import { HomePage } from './Home';
+import { RootLayout } from './Layouts';
 
-export { Home };
+export {
+  ErrorPage,
+  GalleryByBall,
+  HomePage,
+  PhotosPage,
+  RootLayout,
+  VideosPage,
+};

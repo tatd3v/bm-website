@@ -3,9 +3,10 @@ import { Container, Navbar } from 'react-bootstrap';
 
 // @components
 import { SubNavbar } from './SubNavbar';
+import { SocialMediaNav } from './SocialMediaNavBar';
 
 // @assets
-import Logo from '../../assets/LogoWhite.png';
+import Logo from '../../assets/ShortLogoWhite.png';
 
 // @styles
 import './header.scss';
@@ -25,13 +26,14 @@ const Header = () => {
     <Navbar className="header__navbar bg-light" bg="transparent" expand="lg">
       <Container className="header__nav-container" fluid>
         <div className="d-flex flex-column align-items-center w-100">
-          <Navbar.Brand href="/" className="header__navbar-brand my-lg-0">
+          <Navbar.Brand className="header__navbar-brand my-lg-0">
             <img
               src={Logo}
               alt="Logo"
-              style={{ maxWidth: '70%', maxHeight: '200px' }}
+              style={{ maxWidth: '75%', maxHeight: '130px' }}
             />
           </Navbar.Brand>
+          <SocialMediaNav />
           <Navbar.Toggle
             aria-controls="navbarScroll"
             style={{

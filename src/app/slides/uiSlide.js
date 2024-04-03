@@ -3,7 +3,6 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   calendar: {
-    isMobile: false,
     showCalendar: false,
     showDictionary: false,
     showEvent: false,
@@ -11,12 +10,16 @@ const initialState = {
   header: {
     showSubNavbar: false,
   },
+  isMobile: false,
 };
 
 const uiSlice = createSlice({
   name: 'ui',
   initialState: initialState,
   reducers: {
+    setIsMobile: (state, action) => {
+      state.isMobile = action.payload;
+    },
     setShowCalendar: (state, action) => {
       state.calendar.showCalendar = action.payload;
     },
@@ -33,6 +36,7 @@ const uiSlice = createSlice({
 });
 
 export const {
+  setIsMobile,
   setShowCalendar,
   setShowDictionary,
   setShowEvent,
