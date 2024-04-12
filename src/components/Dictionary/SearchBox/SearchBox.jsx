@@ -1,7 +1,7 @@
 // @vendors
+import { SearchCircleIcon } from "hugeicons-react"
 import { useState, useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { SearchHeart } from 'react-bootstrap-icons';
 import { useDispatch, useSelector } from 'react-redux';
 
 // @styles
@@ -55,12 +55,16 @@ export const SearchBox = () => {
           value={searchValue}
         />
         <Button
-          className="search-btn btn-secondary"
+          className="search-btn btn-secondary d-flex align-items-center"
           size="lg"
           type="submit"
           disabled={!searchValue.trim()}
         >
-          <SearchHeart size="2rem" />
+          <SearchCircleIcon
+            color={"#ffffff"}
+            size={32}
+            variant={"stroke"}
+          />
         </Button>
       </Form.Group>
     </Form>
