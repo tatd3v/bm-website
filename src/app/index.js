@@ -1,6 +1,7 @@
 import {
   setEventsData,
   setEventInfo,
+  setHideLoading,
   setSearchedWord,
   setShowCalendar,
   setShowDictionary,
@@ -14,6 +15,7 @@ import { store } from './store';
 export {
   setEventsData,
   setEventInfo,
+  setHideLoading,
   setSearchedWord,
   setShowDictionary,
   setShowCalendar,

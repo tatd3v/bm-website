@@ -11,12 +11,18 @@ const initialState = {
     showSubNavbar: false,
   },
   isMobile: false,
+  loading: {
+    hide: false,
+  },
 };
 
 const uiSlice = createSlice({
   name: 'ui',
   initialState: initialState,
   reducers: {
+    setHideLoading: (state, action) => {
+      state.loading.hide = action.payload;
+    },
     setIsMobile: (state, action) => {
       state.isMobile = action.payload;
     },
@@ -36,6 +42,7 @@ const uiSlice = createSlice({
 });
 
 export const {
+  setHideLoading,
   setIsMobile,
   setShowCalendar,
   setShowDictionary,
