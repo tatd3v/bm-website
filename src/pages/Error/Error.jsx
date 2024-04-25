@@ -1,5 +1,5 @@
 // @vendors
-import { Link } from 'react-bootstrap-icons';
+import { Link } from 'react-router-dom';
 
 // @components
 import { Header } from '../../components';
