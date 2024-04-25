@@ -8,6 +8,7 @@ import {
   Dictionary,
   EventsCalendar,
   Header,
+  Footer,
 } from '../../components';
 
 export const RootLayout = () => {
@@ -15,15 +16,16 @@ export const RootLayout = () => {
     (state) => state.ui.calendar
   );
   return (
-    <div>
+    <>
       <BackgroundVideo blur={1}>
         <Header />
-
-        {showCalendar && <EventsCalendar />}
-        {showDictionary && <Dictionary />}
-
-        <Outlet />
+        <main>
+          {showCalendar && <EventsCalendar />}
+          {showDictionary && <Dictionary />}
+          <Outlet />
+        </main>
+        <Footer />
       </BackgroundVideo>
-    </div>
+    </>
   );
 };
