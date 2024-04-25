@@ -1,15 +1,13 @@
-// @vendors
-import { Container } from "react-bootstrap"
-
 // @components
-import { LiveRadio } from "./LiveRadio"
+import { LiveRadio } from '../LiveRadio';
+
+// @styles
+import './footer.scss';
 
 export const Footer = () => {
   return (
-    <footer>
-      <Container fluid>
-        <LiveRadio />
-      </Container>
+    <footer className="footer">
+      <LiveRadio />
     </footer>
-  )
-}
+  );
+};
