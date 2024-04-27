@@ -24,7 +24,7 @@ const App = () => {
   useEffect(() => {
     dispatch(setEventsData(eventsData));
     dispatch(setWordsData(words));
-    dispatch(setIsMobile(window.innerWidth <= 990 ? true : false));
+    dispatch(setIsMobile(window.innerWidth <= 991 ? true : false));
   }, []);
 
   const router = createBrowserRouter([
