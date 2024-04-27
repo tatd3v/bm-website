@@ -26,21 +26,23 @@ const Header = () => {
     <Navbar className="header__navbar bg-light" bg="transparent" expand="lg">
       <Container className="header__nav-container" fluid>
         <div className="d-flex flex-column align-items-center w-100">
-          <Navbar.Brand className="header__navbar-brand my-lg-0">
-            <img
-              src={Logo}
-              alt="Logo"
-              style={{ maxWidth: '75%', maxHeight: '130px' }}
+          <div className="header_nav-logo-toggle-container d-flex align-items-center w-100">
+            <Navbar.Brand className="header__navbar-brand my-lg-0">
+              <img
+                src={Logo}
+                alt="Logo"
+                style={{ maxWidth: '75%', maxHeight: '130px' }}
+              />
+            </Navbar.Brand>
+            <Navbar.Toggle
+              aria-controls="navbarScroll"
+              style={{
+                borderColor: 'white',
+              }}
+              onClick={toggleSubNavbar}
             />
-          </Navbar.Brand>
+          </div>
           <SocialMediaNav />
-          <Navbar.Toggle
-            aria-controls="navbarScroll"
-            style={{
-              borderColor: 'white',
-            }}
-            onClick={toggleSubNavbar}
-          />
         </div>
         <SubNavbar />
       </Container>
