@@ -22,6 +22,11 @@
   }
 }
 
+.header_nav-logo-toggle-container {
+  width: 100%;
+  padding: 0.3rem 1rem 0 1rem;
+}
+
 @media (max-width: 990px) {
   .header__navbar {
     margin-bottom: 11%;
