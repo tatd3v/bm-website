@@ -2,7 +2,6 @@
 
 export const LiveRadio = () => {
   return (
-<<<<<<< HEAD
       <iframe
         allow="geolocation; microphone; camera; autoplay; encrypted-media"
         sandbox="allow-same-origin allow-scripts"
@@ -17,16 +16,5 @@ export const LiveRadio = () => {
         }}
         title="Live Radio"
       ></iframe>
-=======
-    <iframe
-      src="https://radio.ballroomedellin.com/public/shade_radio/embed?theme=dark"
-      style={{
-        background: 'none transparent !important',
-        border: '0',
-        maxHeight: '40px',
-        width: '100%',
-      }}
-    ></iframe>
->>>>>>> main
   );
 };
