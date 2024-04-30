@@ -1,12 +1,13 @@
 // @vendors
+import { useState, useEffect, useRef } from 'react';
 import { Container, Navbar } from 'react-bootstrap';
-import { useDispatch } from 'react-redux';
-
-// @app
-import { setShowSubNavbar } from '../../app';
+import { useDispatch, useSelector } from 'react-redux';
 
 // @assets
 import Logo from '../../assets/ShortLogoWhite.png';
+
+// @app
+import { setShowSubNavbar } from '../../app';
 
 // @components
 import { SubNavbar } from './SubNavbar';
@@ -17,9 +18,35 @@ import './_header.scss';
 
 const Header = () => {
   const dispatch = useDispatch();
+  const showSubNavbar = useSelector((state) => state.ui.header.showSubNavbar);
+  const [isSubNavbarOpen, setIsSubNavbarOpen] = useState(false);
+  const subNavbarRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        subNavbarRef.current &&
+        !subNavbarRef.current.contains(event.target)
+      ) {
+        dispatch(setShowSubNavbar(false));
+        setIsSubNavbarOpen(false);
+      }
+    };
+
+    if (isSubNavbarOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    } else {
+      document.removeEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isSubNavbarOpen, dispatch]);
 
   const toggleSubNavbar = () => {
-    dispatch(setShowSubNavbar());
+    dispatch(setShowSubNavbar(!showSubNavbar));
+    setIsSubNavbarOpen(!isSubNavbarOpen);
   };
 
   return (
@@ -42,7 +69,7 @@ const Header = () => {
           />
         </div>
         <SocialMediaNav />
-        <SubNavbar />
+        {showSubNavbar && <SubNavbar ref={subNavbarRef} />}
       </Container>
     </Navbar>
   );

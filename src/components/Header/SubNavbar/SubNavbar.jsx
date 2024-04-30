@@ -1,4 +1,5 @@
 // @vendors
+import { forwardRef, useEffect } from 'react';
 import { Container, Nav, NavDropdown, Navbar } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -7,17 +8,39 @@ import { Link } from 'react-router-dom';
 import './subNavbar.scss';
 
 // @app
-import { setShowCalendar, setShowDictionary, setEventInfo } from '../../../app';
+import {
+  setEventInfo,
+  setShowCalendar,
+  setShowDictionary,
+  setShowSubNavbar,
+} from '../../../app';
 
 // @helpers
 import { extractNumbersFromString } from '../../../helpers';
 
-export const SubNavbar = () => {
+const SubNavbar = forwardRef((props, ref) => {
   const dispatch = useDispatch();
-
   const { header, isMobile } = useSelector((state) => state.ui);
   const { showSubNavbar } = header;
   const { eventsByYear } = useSelector((state) => state.data.calendar);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (showSubNavbar && !event.target.closest('.sub-navbar__collapse')) {
+        dispatch(setShowSubNavbar(false));
+      }
+    };
+
+    if (showSubNavbar && isMobile) {
+      document.addEventListener('mousedown', handleClickOutside);
+    } else {
+      document.removeEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [dispatch, isMobile, showSubNavbar]);
 
   const onClickCalendar = () => {
     dispatch(setShowCalendar(true));
@@ -37,12 +60,12 @@ export const SubNavbar = () => {
     <>
       <Navbar.Collapse
         className={`sub-navbar__collapse ${
-          (showSubNavbar && isMobile) || !isMobile ? 'show' : ''
+          showSubNavbar && isMobile ? 'show' : ''
         }`}
         id="navbarScroll"
         variant="dark"
       >
-        <Nav className="sub-navbar__container">
+        <Nav className="sub-navbar__container" ref={ref}>
           <Nav.Link onClick={onClickCalendar}>Calendario</Nav.Link>
           <Nav.Link onClick={onClickDictionary}>Diccionario</Nav.Link>
           <NavDropdown title="Balls" id="collasible-nav-dropdown">
@@ -85,4 +108,8 @@ export const SubNavbar = () => {
       </Navbar.Collapse>
     </>
   );
-};
+});
+
+SubNavbar.displayName = 'SubNavbar';
+
+export default SubNavbar;
