@@ -3,8 +3,6 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { createBrowserRouter } from 'react-router-dom';
 
-// @components
-
 // @app
 import { setEventsData, setWordsData } from './app';
 
