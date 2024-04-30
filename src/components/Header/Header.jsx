@@ -24,7 +24,7 @@ const Header = () => {
 
   return (
     <Navbar
-      className="header__navbar bg-light w-100 main-font-style pt-3"
+      className="header__navbar bg-light w-100 main-font-style pt-1"
       bg="transparent"
       expand="lg"
     >

@@ -18,15 +18,15 @@
   &-brand {
     img {
       height: auto;
-      max-width: 25%;
-      min-width: 21%;
+      max-width: 23%;
+      min-width: 20%;
 
       @media (max-width: 576px) {
-        min-width: 30%;
+        min-width: 27%;
       }
 
       @media (min-width: 577px) and (max-width: 768px) {
-        max-width: 21%;
+        min-width: 25%;
       }
     }
   }
@@ -35,8 +35,6 @@
 
 @media (min-width: 769px) and (max-width: 990px) {
   .header__navbar {
-    margin-bottom: 12%;
-
     &-brand {
       text-align: center;
     }
