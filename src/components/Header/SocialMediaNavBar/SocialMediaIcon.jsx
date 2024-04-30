@@ -2,7 +2,7 @@
 import { useState } from 'react';
 
 // @styles
-import './socialMediaIcon.scss';
+import './_socialMediaIcon.scss';
 
 export const SocialMediaIcon = ({ name, source, url }) => {
   const [clicked, setClicked] = useState(false);

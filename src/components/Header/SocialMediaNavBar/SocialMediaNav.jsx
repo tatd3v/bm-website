@@ -5,7 +5,7 @@ import { SocialMediaIcon } from './SocialMediaIcon';
 import { logos } from './iconsData';
 
 // @styles
-import './socialMediaNav.scss';
+import './_socialMediaNav.scss';
 
 export const SocialMediaNav = () => {
   return (

@@ -1,3 +1,3 @@
-import { SubNavbar } from './SubNavbar';
+import SubNavbar from './SubNavbar';
 
 export { SubNavbar };
