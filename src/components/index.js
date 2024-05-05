@@ -6,6 +6,7 @@ import { Footer } from './Footer';
 import { Header } from './Header';
 import { LiveRadio } from './LiveRadio';
 import { Loading } from './Loading';
+import { VideoPlayer } from './videoPlayer';
 
 export {
   BackgroundVideo,
@@ -16,4 +17,5 @@ export {
   Header,
   LiveRadio,
   Loading,
+  VideoPlayer,
 };

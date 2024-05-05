@@ -9,6 +9,7 @@ import {
   EventsCalendar,
   Header,
   Footer,
+  // VideoPlayer,
 } from '../../components';
 
 export const RootLayout = () => {
@@ -18,6 +19,7 @@ export const RootLayout = () => {
   return (
     <>
       <BackgroundVideo blur={1}>
+        {/* <VideoPlayer /> */}
         <Header />
         <main>
           {showCalendar && <EventsCalendar />}
