@@ -1,23 +1,25 @@
-import dataSlide, {
+import dataSlice, {
   setEventsData,
   setEventInfo,
   setSearchedWord,
   setWasFound,
   setWordsData,
-} from './dataSlide';
-import uiSlide, {
+} from './dataSlice';
+import uiSlice, {
   setHideLoading,
   setShowCalendar,
   setShowDictionary,
   setShowEvent,
+  setIsMobile,
   setShowSubNavbar,
-} from './uiSlide';
+} from './uiSlice';
 
 export {
-  dataSlide,
+  dataSlice,
   setEventsData,
   setEventInfo,
   setHideLoading,
+  setIsMobile,
   setShowCalendar,
   setShowDictionary,
   setSearchedWord,
@@ -25,5 +27,5 @@ export {
   setShowSubNavbar,
   setWasFound,
   setWordsData,
-  uiSlide,
+  uiSlice,
 };

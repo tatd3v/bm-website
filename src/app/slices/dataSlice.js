@@ -41,6 +41,8 @@ const dataSlice = createSlice({
 });
 
 export const {
+  setCld,
+  setCldVideo,
   setEventsData,
   setEventInfo,
   setSearchedWord,
