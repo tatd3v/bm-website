@@ -2,19 +2,22 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { createBrowserRouter } from 'react-router-dom';
+import { RouterProvider } from 'react-router-dom';
 
 // @app
-import { setEventsData, setWordsData } from './app';
+import { setEventsData, setIsMobile, setWordsData } from './app';
 
 // @helpers
 import { eventsData, words } from './helpers';
-import { setIsMobile } from './app/slides/uiSlide';
 
 // @pages
-import { ErrorPage, HomePage, RootLayout } from './pages';
-import { RouterProvider } from 'react-router-dom';
-import { GalleryLayout } from './pages/Layouts';
-import { GalleryByBall } from './pages/Gallery/GalleryByBall';
+import {
+  ErrorPage,
+  GalleryLayout,
+  GalleryByBall,
+  HomePage,
+  RootLayout,
+} from './pages';
 
 const App = () => {
   const dispatch = useDispatch();
