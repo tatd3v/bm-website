@@ -2,29 +2,33 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { createBrowserRouter } from 'react-router-dom';
-
-// @components
+import { RouterProvider } from 'react-router-dom';
 
 // @app
-import { setEventsData, setWordsData } from './app';
+import { setEventsData, setIsMobile, setWordsData } from './app';
 
 // @helpers
-import { eventsData, words } from './helpers';
-import { setIsMobile } from './app/slides/uiSlide';
+import { eventsData, setAppHeight, words } from './helpers';
 
 // @pages
 import { ErrorPage, HomePage, RootLayout } from './pages';
-import { RouterProvider } from 'react-router-dom';
-import { GalleryLayout } from './pages/Layouts';
-import { GalleryByBall } from './pages/Gallery/GalleryByBall';
+import { GalleryByBall, GalleryLayout } from './pages';
 
 const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    setAppHeight();
+
+    window.addEventListener('resize', setAppHeight);
+
     dispatch(setEventsData(eventsData));
     dispatch(setWordsData(words));
     dispatch(setIsMobile(window.innerWidth <= 991 ? true : false));
+
+    return () => {
+      window.removeEventListener('resize', setAppHeight);
+    };
   }, []);
 
   const router = createBrowserRouter([
