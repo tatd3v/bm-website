@@ -35,14 +35,26 @@
   }
 }
 
-@media (min-wdith: 769px) {
-  .bv-video {
+@media (min-width: 769px) {
+  .bv__video {
     height: 100%;
-    width: 177.77777778vh; /* 100 * 16 / 9 */
+    width: 177.77777778vh;
     min-width: 100%;
     min-height: 56.25vw;
-    left: 50%; /* % of surrounding element */
+    left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
   }
 }
+
+// @media screen and (max-width: 767px) {
+
+//   _::-webkit-full-page-media,
+//   _:future {
+//     padding-bottom: 4.063rem;
+//   }
+
+//   .safari-only {
+//     padding-bottom: 4.063rem;
+//   }
+// }
