@@ -36,25 +36,24 @@
 }
 
 @media (min-width: 769px) {
-  .bv__video {
+  .bv-video {
     height: 100%;
     width: 177.77777778vh;
+    /* 100 * 16 / 9 */
     min-width: 100%;
     min-height: 56.25vw;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
   }
+
+  @media screen and (-webkit-min-device-pixel-ratio:0) {
+    .bv-video {
+      height: 100%;
+    }
+
+    .bv__content {
+      padding-bottom: 4.063rem;
+    }
+  }
 }
-
-// @media screen and (max-width: 767px) {
-
-//   _::-webkit-full-page-media,
-//   _:future {
-//     padding-bottom: 4.063rem;
-//   }
-
-//   .safari-only {
-//     padding-bottom: 4.063rem;
-//   }
-// }
