@@ -1,0 +1,37 @@
+@import 'colors';
+@import 'fonts';
+
+:root {
+  max-height: 100%;
+  width: 100%;
+}
+
+html,
+body,
+#root,
+main {
+  height: 100%;
+}
+
+body {
+  background: none transparent;
+  color: $main-font-color;
+  font-family: $lato;
+  font-optical-sizing: $optical-font;
+  line-height: $main-line-heigh;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: $main-weight;
+  font-style: $main-font-style;
+}
+
+.main-font-style {
+  font-family: $roboto-flex;
+  font-optical-sizing: $optical-font;
+  font-weight: $main-weight;
+  font-style: $main-font-style;
+  font-variation-settings: $roboto-variation;
+}
