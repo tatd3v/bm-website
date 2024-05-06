@@ -6,7 +6,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 // @src
 import App from './App';
-import './index.css';
+import './styles/_index.scss';
 
 // @app
 import { store } from './app';
