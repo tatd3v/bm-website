@@ -5,7 +5,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import { RouterProvider } from 'react-router-dom';
 
 // @app
-import { setEventsData, setIsMobile, setWordsData } from './app';
+import { setEventsData, setWordsData } from './app';
 
 // @helpers
 import { eventsData, setAppHeight, words } from './helpers';
@@ -24,7 +24,6 @@ const App = () => {
 
     dispatch(setEventsData(eventsData));
     dispatch(setWordsData(words));
-    dispatch(setIsMobile(window.innerWidth <= 991 ? true : false));
 
     return () => {
       window.removeEventListener('resize', setAppHeight);

@@ -2,7 +2,6 @@ import {
   setEventsData,
   setEventInfo,
   setHideLoading,
-  setIsMobile,
   setSearchedWord,
   setShowCalendar,
   setShowDictionary,
@@ -10,14 +9,13 @@ import {
   setShowSubNavbar,
   setWasFound,
   setWordsData,
-} from './slides';
+} from './slices';
 import { store } from './store';
 
 export {
   setEventsData,
   setEventInfo,
   setHideLoading,
-  setIsMobile,
   setSearchedWord,
   setShowDictionary,
   setShowCalendar,
