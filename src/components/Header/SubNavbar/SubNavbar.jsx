@@ -20,8 +20,10 @@ import { extractNumbersFromString } from '../../../helpers';
 
 const SubNavbar = forwardRef((props, ref) => {
   const dispatch = useDispatch();
-  const { header, isMobile } = useSelector((state) => state.ui);
+  const { header, device } = useSelector((state) => state.ui);
+  const { isMobile } = device;
   const { showSubNavbar } = header;
+
   const { eventsByYear } = useSelector((state) => state.data.calendar);
 
   useEffect(() => {

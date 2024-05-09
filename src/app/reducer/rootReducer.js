@@ -1,10 +1,10 @@
 // @vendors
 import { combineReducers } from '@reduxjs/toolkit';
 
-// @slides
-import { dataSlide, uiSlide } from '../slides';
+// @slices
+import { dataSlice, uiSlice } from '../slices';
 
 export const rootReducer = combineReducers({
-  data: dataSlide,
-  ui: uiSlide,
+  data: dataSlice,
+  ui: uiSlice,
 });
