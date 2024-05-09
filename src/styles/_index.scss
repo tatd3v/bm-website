@@ -2,13 +2,19 @@
 @import 'fonts';
 
 :root {
-  max-height: 100%;
-  width: 100%;
+  --app-height: 100%;
 }
 
 html,
-body,
-#root,
+body {
+  height: 100vh;
+  height: var(--app-height);
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  width: 100vw;
+}
+
 main {
   height: 100%;
 }
@@ -19,8 +25,7 @@ body {
   font-family: $lato;
   font-optical-sizing: $optical-font;
   line-height: $main-line-heigh;
-  margin: 0;
-  padding: 0;
+
   text-align: center;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

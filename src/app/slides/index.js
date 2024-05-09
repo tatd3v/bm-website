@@ -7,6 +7,7 @@ import dataSlide, {
 } from './dataSlide';
 import uiSlide, {
   setHideLoading,
+  setIsMobile,
   setShowCalendar,
   setShowDictionary,
   setShowEvent,
@@ -18,6 +19,7 @@ export {
   setEventsData,
   setEventInfo,
   setHideLoading,
+  setIsMobile,
   setShowCalendar,
   setShowDictionary,
   setSearchedWord,
