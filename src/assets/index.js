@@ -1,4 +1,4 @@
+import { backgroundVidMp4, backgroundVidWebm } from './videos';
 import voguerLoader from './voguerLoader.gif';
-import { backgroundVideo } from './videos';
 
-export { backgroundVideo, voguerLoader };
+export { backgroundVidMp4, backgroundVidWebm, voguerLoader };

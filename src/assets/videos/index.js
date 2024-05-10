@@ -1,3 +1,4 @@
-import backgroundVideo from './background-video.webm';
+import backgroundVidMp4 from './background-video.mp4';
+import backgroundVidWebm from './background-video.webm';
 
-export { backgroundVideo };
+export { backgroundVidMp4, backgroundVidWebm };

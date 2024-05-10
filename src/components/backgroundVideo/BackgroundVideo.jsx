@@ -1,5 +1,5 @@
 // @assets
-import { backgroundVideo } from '../../assets';
+import { backgroundVidMp4, backgroundVidWebm } from '../../assets';
 
 // @styles
 import '../backgroundVideo/backgroundVideo.scss';
@@ -18,7 +18,8 @@ export const BackgroundVideo = ({ blur, children }) => {
           preload="auto"
           style={{ filter: `blur(${blur}px)`, WebkitFilter: `blur(${blur}px)` }}
         >
-          <source src={`${backgroundVideo}#t=0.001`} type="video/mp4" />
+          <source src={backgroundVidMp4} type="video/mp4" />
+          <source src={backgroundVidWebm} type="video/webm" />
         </video>
         <div className="bv__content">{children}</div>
       </div>
