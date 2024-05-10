@@ -1,3 +1,3 @@
-import { backgroundVideo } from './background-video.webm';
+import backgroundVideo from './background-video.webm';
 
 export { backgroundVideo };
