@@ -1,9 +1,9 @@
 .footer {
-  align-items: center;
   background: rgba(0, 0, 0, 0.4);
-  display: flex;
-  justify-content: center;
-  max-height: 3.814rem;
-  padding: 7px;
+  bottom: 0;
+  height: 10%;
+  padding: 0.4375rem;
+  position: fixed;
   width: 100%;
+  z-index: 2;
 }
