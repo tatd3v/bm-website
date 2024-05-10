@@ -1,6 +1,6 @@
 // @assets
 import { backgroundVidMp4 } from 'assets';
-import backgroundVidWebm from '@/src/assets/videos/index.js';
+import backgroundVidWebm from '../../assets/videos';
 
 // @styles
 import '../backgroundVideo/backgroundVideo.scss';
