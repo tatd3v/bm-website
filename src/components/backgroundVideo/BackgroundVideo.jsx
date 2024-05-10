@@ -1,5 +1,5 @@
 // @assets
-import { backgroundVidMp4, backgroundVidWebm } from '@/assets';
+import { backgroundVidMp4, backgroundVidWebm } from 'assets';
 
 // @styles
 import '../backgroundVideo/backgroundVideo.scss';
