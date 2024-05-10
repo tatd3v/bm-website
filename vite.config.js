@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [eslintPlugin(), react()],
   resolve: {
     alias: {
-      '@videos': '/src/assets/videos',
+      '@': '/src',
     },
   },
   server: {
