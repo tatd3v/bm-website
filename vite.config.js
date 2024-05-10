@@ -8,6 +8,7 @@ import path from 'path';
 export default defineConfig({
   build: {
     rollupOptions: {
+      expernal: [/^node:.*/],
       input: {
         main: './src/main.jsx',
       },
