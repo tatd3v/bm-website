@@ -26,7 +26,7 @@
 .bv__video {
   object-fit: cover;
   width: 100%;
-  height: var(--app-height);
+  height: 100vh;
 }
 
 @media (max-width: 768px) {
@@ -36,10 +36,9 @@
 }
 
 @media (min-width: 769px) {
-  .bv-video {
-    height: 100%;
-    width: 177.77777778vh;
-    /* 100 * 16 / 9 */
+  .bv__video {
+    height: 56.25vw;
+    width: 100vw;
     min-width: 100%;
     min-height: 56.25vw;
     left: 50%;

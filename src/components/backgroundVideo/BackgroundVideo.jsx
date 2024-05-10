@@ -9,10 +9,10 @@ export const BackgroundVideo = ({ blur, children }) => {
     <>
       <div className="bv__container">
         <video
-          autoPlay="autoplay"
+          autoPlay
           className="bv__video"
           id="video-id"
-          loop="loop"
+          loop
           muted
           playsInline
           preload="auto"
