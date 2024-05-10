@@ -5,6 +5,11 @@ import eslintPlugin from 'vite-plugin-eslint';
 export default defineConfig({
   assetsInclude: ['**/*.webm', '**/*.mp4', '**/*.ogv'],
   plugins: [eslintPlugin(), react()],
+  resolve: {
+    alias: {
+      '@videos': '/src/assets/videos',
+    },
+  },
   server: {
     host: true,
   },
