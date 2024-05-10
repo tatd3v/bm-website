@@ -33,7 +33,7 @@ export default defineConfig({
     alias: {
       '@': path.resolve(__dirname, './src/'),
       app: path.resolve(__dirname, './src/app/index.js'),
-      assets: path.resolve(__dirname, './src/assets/index.js'),
+      assets: path.resolve(__dirname, '/src/assets/index.js'),
       components: path.resolve(__dirname, './src/components/index.js'),
       helpers: path.resolve(__dirname, './src/helpers/index.js'),
       pages: path.resolve(__dirname, './src/pages/index.js'),
