@@ -1,4 +1,4 @@
 import voguerLoader from './voguerLoader.gif';
-import backgroundVideo from './videos/background-video.webm';
+import { backgroundVideo } from './videos';
 
 export { backgroundVideo, voguerLoader };
