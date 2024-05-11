@@ -1,13 +1,18 @@
 @import 'colors';
 @import 'fonts';
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
 :root {
-  --app-height: 100%;
+  --app-height: 100svh;
 }
 
 html,
 body {
-  height: 100vh;
+  height: 100svh;
   height: var(--app-height);
   margin: 0;
   overflow: hidden;
@@ -16,7 +21,10 @@ body {
 }
 
 #root {
+  display: flex;
+  flex-direction: column;
   height: var(--app-height);
+  position: relative;
 }
 
 main {

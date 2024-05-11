@@ -1,7 +1,6 @@
 // @styles
-import './home.css';
-//import { EventsCalendar } from '../../components';
+import './_home.scss';
 
 export const HomePage = () => {
-  return <div className="home__container">{/* <EventsCalendar /> */}</div>;
+  return <div className="home__container">{}</div>;
 };
