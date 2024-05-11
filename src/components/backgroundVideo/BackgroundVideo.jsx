@@ -15,9 +15,10 @@ export const BackgroundVideo = ({ blur, children }) => {
           loop="loop"
           muted
           playsInline
+          preload="auto"
           style={{ filter: `blur(${blur}px)`, WebkitFilter: `blur(${blur}px)` }}
         >
-          <source src={Video} type="video/mp4" />
+          <source src={`${Video}#t=0.001`} type="video/mp4" />
         </video>
         <div className="bv__content">{children}</div>
       </div>

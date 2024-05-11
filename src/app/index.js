@@ -9,7 +9,7 @@ import {
   setShowSubNavbar,
   setWasFound,
   setWordsData,
-} from './slides';
+} from './slices';
 import { store } from './store';
 
 export {

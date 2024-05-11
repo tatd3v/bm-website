@@ -1,14 +1,32 @@
 @import 'colors';
 @import 'fonts';
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
 :root {
-  max-height: 100%;
-  width: 100%;
+  --app-height: 100svh;
 }
 
 html,
-body,
-#root,
+body {
+  height: 100svh;
+  height: var(--app-height);
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  width: 100vw;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: var(--app-height);
+  position: relative;
+}
+
 main {
   height: 100%;
 }
@@ -19,8 +37,6 @@ body {
   font-family: $lato;
   font-optical-sizing: $optical-font;
   line-height: $main-line-heigh;
-  margin: 0;
-  padding: 0;
   text-align: center;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
