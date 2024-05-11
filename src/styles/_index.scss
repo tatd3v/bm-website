@@ -1,6 +1,11 @@
 @import 'colors';
 @import 'fonts';
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
 :root {
   --app-height: 100svh;
 }
