@@ -2,6 +2,7 @@ import { BackgroundVideo } from './backgroundVideo';
 import { CalendarEvent } from './Modals';
 import { Dictionary } from './Dictionary';
 import { EventsCalendar } from './Calendar';
+import { FloatButton } from './UI';
 import { Footer } from './Footer';
 import { Header } from './Header';
 import { LiveRadio } from './LiveRadio';
@@ -12,6 +13,7 @@ export {
   CalendarEvent,
   Dictionary,
   EventsCalendar,
+  FloatButton,
   Footer,
   Header,
   LiveRadio,

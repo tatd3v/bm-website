@@ -8,6 +8,7 @@ import {
   Dictionary,
   EventsCalendar,
   Header,
+  FloatButton,
   Footer,
 } from '../../components';
 
@@ -20,6 +21,7 @@ export const RootLayout = () => {
       <BackgroundVideo blur={1}>
         <Header />
         <main>
+          <FloatButton />
           {showCalendar && <EventsCalendar />}
           {showDictionary && <Dictionary />}
           <Outlet />
