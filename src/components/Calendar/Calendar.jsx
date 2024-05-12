@@ -20,8 +20,6 @@ import { useRef } from 'react';
 import { setShowCalendar, setEventInfo, setShowEvent } from '../../app';
 
 export const EventsCalendar = () => {
-  //const [eventInfo, setEventInfo] = useState({});
-
   const { eventsData, eventInfo } = useSelector((state) => state.data.calendar);
   const { showCalendar, showEvent } = useSelector((state) => state.ui.calendar);
 
