@@ -1,0 +1,16 @@
+$primary-timing-func: cubic-bezier(0.86, 0, 0.07, 1);
+$button-radius: 60px;
+$button-inner-ring-radius: 120px;
+$button-outer-ring-radius: 100px;
+$button-gradient: 135deg,
+rgba(244, 87, 116, 1) 0%,
+rgba(229, 69, 139, 1) 100%;
+$close-icon-timing-function: $primary-timing-func;
+$main-background-color: #edc1c2;
+$menu-radius: calc(#{$button-radius} - 2px);
+$menu-height: 255px;
+$menu-width: 245px;
+$menu-border-radius: 10px;
+$menu-bg-color: rgba(0, 0, 0, 0.4);
+$menu-timing-function: $primary-timing-func;
+$menu-icon-size: 30px;

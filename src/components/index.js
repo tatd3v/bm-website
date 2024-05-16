@@ -7,6 +7,7 @@ import { Footer } from './Footer';
 import { Header } from './Header';
 import { LiveRadio } from './LiveRadio';
 import { Loading } from './Loading';
+import { StickyMenu } from './StickyCalendar';
 
 export {
   BackgroundVideo,
@@ -18,4 +19,5 @@ export {
   Header,
   LiveRadio,
   Loading,
+  StickyMenu,
 };
