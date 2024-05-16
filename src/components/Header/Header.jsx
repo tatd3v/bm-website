@@ -1,13 +1,9 @@
 // @vendors
-import { useState, useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { Container, Navbar } from 'react-bootstrap';
-import { useDispatch, useSelector } from 'react-redux';
 
 // @assets
 import Logo from '../../assets/ShortLogoWhite.png';
-
-// @app
-import { setShowSubNavbar } from '../../app';
 
 // @components
 import { SubNavbar } from './SubNavbar';
@@ -17,41 +13,35 @@ import { SocialMediaNav } from './SocialMediaNavBar';
 import './_header.scss';
 
 const Header = () => {
-  const dispatch = useDispatch();
-  const showSubNavbar = useSelector((state) => state.ui.header.showSubNavbar);
-  const [isSubNavbarOpen, setIsSubNavbarOpen] = useState(false);
-  const subNavbarRef = useRef(null);
+  const collapseRef = useRef(null);
+  const toggleButtonRef = useRef(null);
 
   useEffect(() => {
-    const handleClickOutside = (event) => {
+    const handleDocumentClick = (event) => {
+      const container = collapseRef.current;
+
       if (
-        subNavbarRef.current &&
-        !subNavbarRef.current.contains(event.target)
+        container &&
+        !container.contains(event.target) &&
+        !event.target.closest('.navbar-toggler')
       ) {
-        dispatch(setShowSubNavbar(false));
-        setIsSubNavbarOpen(false);
+        if (container.classList.contains('show')) {
+          toggleButtonRef.current.click();
+        }
       }
     };
 
-    if (isSubNavbarOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
-    } else {
-      document.removeEventListener('mousedown', handleClickOutside);
-    }
+    document.addEventListener('click', handleDocumentClick);
 
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('click', handleDocumentClick);
     };
-  }, [isSubNavbarOpen, dispatch]);
-
-  const toggleSubNavbar = () => {
-    dispatch(setShowSubNavbar(!showSubNavbar));
-    setIsSubNavbarOpen(!isSubNavbarOpen);
-  };
+  }, []);
 
   return (
     <Navbar
-      className="header__navbar bg-light w-100 main-font-style pt-1"
+      collapseOnSelect
+      className="header__navbar w-100 main-font-style pt-1"
       bg="transparent"
       expand="lg"
     >
@@ -64,12 +54,18 @@ const Header = () => {
             <img src={Logo} alt="Logo" />
           </Navbar.Brand>
           <Navbar.Toggle
-            aria-controls="navbarScroll"
-            onClick={toggleSubNavbar}
+            aria-controls="responsive-navbar-nav"
+            ref={toggleButtonRef}
           />
         </div>
         <SocialMediaNav />
-        {showSubNavbar && <SubNavbar ref={subNavbarRef} />}
+        <Navbar.Collapse
+          id="responsive-navbar-nav"
+          variant="dark"
+          ref={collapseRef}
+        >
+          <SubNavbar />
+        </Navbar.Collapse>
       </Container>
     </Navbar>
   );
