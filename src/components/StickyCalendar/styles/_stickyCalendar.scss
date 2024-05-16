@@ -1,0 +1,83 @@
+@import 'stickyVariables';
+
+.sticky-calendar-container {
+  position: fixed;
+  right: calc($button-radius/2);
+  bottom: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+
+  .inner-menu {
+    position: absolute;
+    height: $menu-height;
+    width: $menu-width;
+    border-radius: $menu-border-radius;
+    background-color: $menu-bg-color;
+    transform: translateX(-91px) translateY(-169px);
+    transition: all 1000ms $menu-timing-function;
+    padding: 30px;
+    overflow: hidden;
+    box-shadow: 10px 10px 18px 5px rgba(0, 0, 0, 0.4);
+
+    >ul {
+      height: 100%;
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      align-content: space-between;
+      margin: 0;
+      padding: 0;
+    }
+
+    >.menu-list>.menu-item {
+      color: #FFFFFF;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+
+      overflow: hidden;
+
+      >.item-icon {
+        margin-right: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        >svg {
+          height: $menu-icon-size;
+          width: $menu-icon-size;
+        }
+      }
+    }
+
+    &.closed {
+      height: $menu-radius;
+      width: $menu-radius;
+      border-radius: 50%;
+      padding: 0;
+      transform: unset;
+
+      >.menu-list>.menu-item>.item-text {
+        opacity: 0;
+      }
+    }
+
+    >.menu-list>.menu-item>.item-text.text-in {
+      animation-duration: 1500ms;
+      animation-name: text-in;
+      animation-fill-mode: forwards;
+      animation-timing-function: $close-icon-timing-function;
+    }
+
+    >.menu-list>.menu-item.text-hides {
+      animation-duration: 200ms;
+      animation-name: text-hides;
+      animation-fill-mode: forwards;
+      animation-timing-function: $close-icon-timing-function;
+    }
+  }
+}

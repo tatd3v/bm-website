@@ -58,6 +58,7 @@ const Header = () => {
             ref={toggleButtonRef}
           />
         </div>
+        <hr style={{ margin: 0 }} />
         <SocialMediaNav />
         <Navbar.Collapse
           id="responsive-navbar-nav"

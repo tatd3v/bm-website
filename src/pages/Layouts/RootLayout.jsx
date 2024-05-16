@@ -8,8 +8,10 @@ import {
   Dictionary,
   EventsCalendar,
   Header,
+  //FloatButton,
   Footer,
-} from '../../components';
+  StickyCalendar,
+} from '@components';
 
 export const RootLayout = () => {
   const { showCalendar, showDictionary } = useSelector(
@@ -17,9 +19,11 @@ export const RootLayout = () => {
   );
   return (
     <>
-      <BackgroundVideo blur={1}>
+      <BackgroundVideo blur={4}>
         <Header />
         <main>
+          {/* <FloatButton /> */}
+          <StickyCalendar />
           {showCalendar && <EventsCalendar />}
           {showDictionary && <Dictionary />}
           <Outlet />
