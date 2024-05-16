@@ -6,10 +6,11 @@ import dataSlice, {
   setWordsData,
 } from './dataSlice';
 import uiSlice, {
-  setHideLoading,
   setShowCalendar,
   setShowDictionary,
   setShowEvent,
+  setIsAnimating,
+  setHideLoading,
 } from './uiSlice';
 
 export {
@@ -17,6 +18,7 @@ export {
   setEventsData,
   setEventInfo,
   setHideLoading,
+  setIsAnimating,
   setShowCalendar,
   setShowDictionary,
   setSearchedWord,

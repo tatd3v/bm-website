@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   calendar: {
+    isAnimating: false,
     showCalendar: false,
     showDictionary: false,
     showEvent: false,
@@ -23,6 +24,9 @@ const uiSlice = createSlice({
     setHideLoading: (state, action) => {
       state.loading.hideLoading = action.payload;
     },
+    setIsAnimating: (state, action) => {
+      state.calendar.isAnimating = action.payload;
+    },
     setShowCalendar: (state, action) => {
       state.calendar.showCalendar = action.payload;
     },
@@ -37,6 +41,7 @@ const uiSlice = createSlice({
 
 export const {
   setHideLoading,
+  setIsAnimating,
   setShowCalendar,
   setShowDictionary,
   setShowEvent,
