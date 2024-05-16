@@ -6,7 +6,6 @@ import {
   setShowCalendar,
   setShowDictionary,
   setShowEvent,
-  setShowSubNavbar,
   setWasFound,
   setWordsData,
 } from './slices';
@@ -20,7 +19,6 @@ export {
   setShowDictionary,
   setShowCalendar,
   setShowEvent,
-  setShowSubNavbar,
   setWasFound,
   setWordsData,
   store,

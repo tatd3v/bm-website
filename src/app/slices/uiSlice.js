@@ -9,14 +9,10 @@ const initialState = {
   },
   device: {
     appHeight: '100vh',
-    isMobile: window.innerWidth <= 991,
     isSafari: /^((?!chrome|android).)*safari/i.test(navigator.userAgent),
   },
-  header: {
-    showSubNavbar: false,
-  },
   loading: {
-    hide: false,
+    hideLoading: false,
   },
 };
 
@@ -25,7 +21,7 @@ const uiSlice = createSlice({
   initialState: initialState,
   reducers: {
     setHideLoading: (state, action) => {
-      state.loading.hide = action.payload;
+      state.loading.hideLoading = action.payload;
     },
     setShowCalendar: (state, action) => {
       state.calendar.showCalendar = action.payload;
@@ -36,9 +32,6 @@ const uiSlice = createSlice({
     setShowEvent: (state, action) => {
       state.calendar.showEvent = action.payload;
     },
-    setShowSubNavbar: (state) => {
-      state.header.showSubNavbar = !state.header.showSubNavbar;
-    },
   },
 });
 
@@ -47,7 +40,6 @@ export const {
   setShowCalendar,
   setShowDictionary,
   setShowEvent,
-  setShowSubNavbar,
 } = uiSlice.actions;
 
 export default uiSlice.reducer;
