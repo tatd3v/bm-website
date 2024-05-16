@@ -10,7 +10,6 @@ import uiSlice, {
   setShowCalendar,
   setShowDictionary,
   setShowEvent,
-  setShowSubNavbar,
 } from './uiSlice';
 
 export {
@@ -22,7 +21,6 @@ export {
   setShowDictionary,
   setSearchedWord,
   setShowEvent,
-  setShowSubNavbar,
   setWasFound,
   setWordsData,
   uiSlice,
