@@ -1,4 +1,4 @@
 import { StickyButton } from './StickyButton';
-import { StickyMenu } from './StickyMenu';
+import { StickyCalendar } from './StickyCalendar';
 
-export { StickyButton, StickyMenu };
+export { StickyButton, StickyCalendar };
