@@ -1,14 +1,9 @@
-.sub-navbar__collapse {
+#responsive-navbar-nav {
   background-color: rgba(0, 0, 0, 0.4);
-  display: -ms-flexbox;
-  display: -webkit-box;
-  display: flex;
-  justify-content: center;
   width: 100%;
-  -ms-flex-pack: center;
-  -webkit-box-pack: center;
 
   .navbar-nav {
+
     .nav-link:active,
     .nav-link:show {
       color: var(--bs-gray-600) !important;
@@ -23,6 +18,10 @@
   .nav-link:focus {
     color: var(--bs-gray-600);
   }
+}
+
+.navbar-expand-lg .navbar-collapse {
+  justify-content: center;
 }
 
 @media (max-width: 990px) {
