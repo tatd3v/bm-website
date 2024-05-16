@@ -1,31 +1,47 @@
 // @vendors
 import Calendar from 'react-calendar';
-import { Container } from 'react-bootstrap';
 import { differenceInCalendarDays } from 'date-fns';
-import React, { useCallback, useEffect } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 // @styles
 import 'react-calendar/dist/Calendar.css';
-import './calendar.scss';
+import './_calendar.scss';
 
 // @components
 import { CalendarEvent } from '../Modals';
-import { useRef } from 'react';
 
 // @helpers
 // import { eventsData } from '../../helpers';
 
 // @app
-import { setShowCalendar, setEventInfo, setShowEvent } from '../../app';
+import {
+  setShowCalendar,
+  setEventInfo,
+  setShowEvent,
+  setIsAnimating,
+} from '../../app';
 
-export const EventsCalendar = () => {
+export const EventsCalendar = ({ isOpen }) => {
   const { eventsData, eventInfo } = useSelector((state) => state.data.calendar);
-  const { showCalendar, showEvent } = useSelector((state) => state.ui.calendar);
+  const { showCalendar, showEvent, isAnimating } = useSelector(
+    (state) => state.ui.calendar
+  );
 
   const dispatch = useDispatch();
 
   const calendarRef = useRef(null);
+
+  useEffect(() => {
+    if (isOpen) {
+      dispatch(setIsAnimating(true));
+    } else {
+      const timer = setTimeout(() => {
+        dispatch(setIsAnimating(false));
+      }, 1000);
+      return () => clearTimeout(timer);
+    }
+  }, [isOpen]);
 
   useEffect(() => {
     const handleOutsideClick = (event) => {
@@ -62,7 +78,6 @@ export const EventsCalendar = () => {
     },
     [eventsData]
   );
-
   const tileClassName = useCallback(
     ({ date }) => {
       const highlighted = eventsData?.some(
@@ -90,8 +105,12 @@ export const EventsCalendar = () => {
   );
 
   return (
-    <Container className="calendar-container">
-      <div className="calendar-wrap" ref={calendarRef}>
+    <div
+      className={`calendar__container ${isAnimating ? 'animating' : ''} ${
+        isOpen ? '' : 'closed'
+      }`}
+    >
+      <div className="calendar__wrap" ref={calendarRef}>
         <Calendar
           locale="es-CO"
           onClickDay={onClickEvent}
@@ -100,6 +119,6 @@ export const EventsCalendar = () => {
         />
       </div>
       {showEvent && <CalendarEvent info={eventInfo} />}
-    </Container>
+    </div>
   );
 };

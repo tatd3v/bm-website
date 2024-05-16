@@ -1,3 +1,3 @@
-import { EventsCalendar } from './Calendar.jsx';
+import { EventsCalendar } from './EventsCalendar.jsx';
 
 export { EventsCalendar };
