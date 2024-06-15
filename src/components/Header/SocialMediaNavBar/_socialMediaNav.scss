@@ -11,41 +11,16 @@
 
 .smn_container {
   align-items: center;
-  background: #123;
+  background: transparent;
   color: transparent;
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
   justify-content: space-around;
   max-width: 100%;
   min-width: 100%;
-  padding: 0.7rem 0;
-  position: relative;
   overflow: hidden;
-
-  &::before,
-  &::after {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 3em;
-    height: 3em;
-    content: '.';
-    mix-blend-mode: screen;
-    animation: move 44s infinite ease-in-out alternate;
-  }
-
-  &::before {
-    @include dots(40);
-    animation-duration: 44s;
-    animation-delay: -27s;
-  }
-
-  &::after {
-    @include dots(40);
-    animation-duration: 43s;
-    animation-delay: -32s;
-  }
+  padding: 0.3rem 0;
+  position: relative;
 }
 
 .smn_container :nth-child(3) {
@@ -54,14 +29,4 @@
 
 .smn_container :nth-child(2) {
   order: 3;
-}
-
-@keyframes move {
-  from {
-    transform: rotate(0deg) scale(12) translateX(-20px);
-  }
-
-  to {
-    transform: rotate(360deg) scale(18) translateX(20px);
-  }
 }
