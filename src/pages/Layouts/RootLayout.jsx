@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux';
 
 // @components
 import {
-  BackgroundVideo,
   Dictionary,
   EventsCalendar,
   Header,
@@ -19,7 +18,7 @@ export const RootLayout = () => {
   );
   return (
     <>
-      <BackgroundVideo blur={4}>
+      <div className="rootlayout__container">
         <Header />
         <main>
           {/* <FloatButton /> */}
@@ -28,7 +27,7 @@ export const RootLayout = () => {
           {showDictionary && <Dictionary />}
           <Outlet />
         </main>
-      </BackgroundVideo>
+      </div>
       <Footer />
     </>
   );

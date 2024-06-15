@@ -17,10 +17,10 @@ const SubNavbar = () => {
 
   const { eventsByYear } = useSelector((state) => state.data.calendar);
 
-  const onClickCalendar = () => {
-    dispatch(setShowCalendar(true));
-    dispatch(setShowDictionary(false));
-  };
+  // const onClickCalendar = () => {
+  //   dispatch(setShowCalendar(true));
+  //   dispatch(setShowDictionary(false));
+  // };
 
   const onClickDictionary = () => {
     dispatch(setShowCalendar(false));
@@ -34,9 +34,9 @@ const SubNavbar = () => {
   return (
     <>
       <Nav className="sub-navbar__container">
-        <Nav.Link eventKey="1" onClick={onClickCalendar}>
+        {/* <Nav.Link eventKey="1" onClick={onClickCalendar}>
           Calendario
-        </Nav.Link>
+        </Nav.Link> */}
         <Nav.Link eventKey="2" onClick={onClickDictionary}>
           Diccionario
         </Nav.Link>

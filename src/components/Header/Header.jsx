@@ -3,7 +3,7 @@ import { useEffect, useRef } from 'react';
 import { Container, Navbar } from 'react-bootstrap';
 
 // @assets
-import Logo from '../../assets/ShortLogoWhite.png';
+import Logo from '../../assets/logo.png';
 
 // @components
 import { SubNavbar } from './SubNavbar';
@@ -41,7 +41,7 @@ const Header = () => {
   return (
     <Navbar
       collapseOnSelect
-      className="header__navbar w-100 main-font-style pt-1"
+      className="header__navbar w-100 main-font-style"
       bg="transparent"
       expand="lg"
     >
@@ -50,7 +50,7 @@ const Header = () => {
         fluid
       >
         <div className="header_nav-logo-toggle-container d-flex justify-content-center align-items-center position-relative">
-          <Navbar.Brand className="header__navbar-brand d-flex flex-column justify-content-between align-items-center my-lg-0 mx-0 p-0">
+          <Navbar.Brand className="header__navbar-brand d-flex flex-row justify-content-center my-lg-0 mx-0 p-0">
             <img src={Logo} alt="Logo" />
           </Navbar.Brand>
           <Navbar.Toggle
@@ -58,7 +58,6 @@ const Header = () => {
             ref={toggleButtonRef}
           />
         </div>
-        <hr style={{ margin: 0 }} />
         <SocialMediaNav />
         <Navbar.Collapse
           id="responsive-navbar-nav"

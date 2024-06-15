@@ -48,3 +48,70 @@ body {
   font-style: $main-font-style;
   font-variation-settings: $roboto-variation;
 }
+
+// Background Styles
+.rootlayout__container {
+  background: linear-gradient(135deg, #6d5b5b, #641515, #460808, #2b0202, #000000, #ff0000, #fbeeee);
+  background-size: 1400% 1400%;
+  -webkit-animation: AnimationName 43s ease infinite;
+  -moz-animation: AnimationName 43s ease infinite;
+  -o-animation: AnimationName 43s ease infinite;
+  animation: AnimationName 43s ease infinite;
+  height: 100%;
+}
+
+@-webkit-keyframes AnimationName {
+  0% {
+    background-position: 0% 10%
+  }
+
+  50% {
+    background-position: 100% 91%
+  }
+
+  100% {
+    background-position: 0% 10%
+  }
+}
+
+@-moz-keyframes AnimationName {
+  0% {
+    background-position: 0% 10%
+  }
+
+  50% {
+    background-position: 100% 91%
+  }
+
+  100% {
+    background-position: 0% 10%
+  }
+}
+
+@-o-keyframes AnimationName {
+  0% {
+    background-position: 0% 10%
+  }
+
+  50% {
+    background-position: 100% 91%
+  }
+
+  100% {
+    background-position: 0% 10%
+  }
+}
+
+@keyframes AnimationName {
+  0% {
+    background-position: 0% 10%
+  }
+
+  50% {
+    background-position: 100% 91%
+  }
+
+  100% {
+    background-position: 0% 10%
+  }
+}
