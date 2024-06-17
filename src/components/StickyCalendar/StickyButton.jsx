@@ -5,7 +5,6 @@ import { RiCloseLargeFill } from 'react-icons/ri';
 import './styles/_stickyButton.scss';
 
 export const StickyButton = ({ onClick, isOpen }) => {
-  console.log({ insideStickyButton: isOpen });
   const [isAnimating, setIsAnimating] = useState(false);
 
   const handleAnimationStart = () => {
