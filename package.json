@@ -20,7 +20,10 @@
     "react-dom": "^18.2.0",
     "react-icons": "^5.2.1",
     "react-redux": "^8.0.7",
-    "react-router-dom": "^6.11.2"
+    "react-router-dom": "^6.11.2",
+    "react-youtube": "^10.1.0",
+    "redux-thunk": "^3.1.0",
+    "youtube-playlist": "^1.0.4"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.21.8",
