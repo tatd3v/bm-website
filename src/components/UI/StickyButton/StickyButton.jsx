@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import { VscCalendar } from 'react-icons/vsc';
 import { RiCloseLargeFill } from 'react-icons/ri';
+import { TbLayoutSidebarLeftExpand } from 'react-icons/tb';
 
-import './styles/_stickyButton.scss';
+import './_stickyButton.scss';
 
-export const StickyButton = ({ onClick, isOpen }) => {
+export const StickyButton = ({ onClick, isOpen, parentComponent }) => {
   const [isAnimating, setIsAnimating] = useState(false);
 
   const handleAnimationStart = () => {
@@ -19,7 +20,6 @@ export const StickyButton = ({ onClick, isOpen }) => {
     if (isAnimating) return;
 
     onClick();
-
     setIsAnimating(true);
     setTimeout(() => setIsAnimating(false), 1000);
   };
@@ -32,10 +32,18 @@ export const StickyButton = ({ onClick, isOpen }) => {
       onAnimationEnd={handleAnimationEnd}
     >
       <div className="icon-container">
-        <VscCalendar className={`calendar-icon ${isOpen ? 'hide' : 'show'}`} />
-        <RiCloseLargeFill
-          className={`close-icon ${isOpen ? 'show' : 'hide'}`}
-        />
+        {parentComponent === 'calendar' ? (
+          <>
+            <VscCalendar
+              className={`calendar-icon ${isOpen ? 'hide' : 'show'}`}
+            />
+            <RiCloseLargeFill
+              className={`close-icon ${isOpen ? 'show' : 'hide'}`}
+            />
+          </>
+        ) : parentComponent === 'sidebar' ? (
+          <TbLayoutSidebarLeftExpand claseName={!isOpen ? 'show' : 'hide'} />
+        ) : null}
       </div>
     </div>
   );
