@@ -1,6 +1,6 @@
-// @styles
-import './_home.scss';
+// @components
+import { PlaylistSidebar } from '@/components';
 
 export const HomePage = () => {
-  return <div className="home__container">{}</div>;
+  return <div className="home__container">{<PlaylistSidebar />}</div>;
 };
