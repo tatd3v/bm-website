@@ -1,3 +1,3 @@
-import YoutubePlaylist from './YoutubePlaylist';
+import PlaylistSidebar from './PlaylistSidebar';
 
-export { YoutubePlaylist };
+export { PlaylistSidebar };

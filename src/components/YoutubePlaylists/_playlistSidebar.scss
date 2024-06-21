@@ -1,0 +1,54 @@
+.ps__container {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  transition: 0.5s;
+  width: 0;
+  z-index: 2;
+
+  &.open {
+    width: 20%;
+  }
+
+  >* {
+    color: #000;
+    display: block;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+
+  .ps__sidebar-header {
+    align-items: center;
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 0.5rem 1.25rem;
+
+    .ps__close-button {
+      margin-left: auto;
+    }
+
+    .ps__sidebar-title {
+      flex-grow: 1;
+      margin: 0;
+      text-align: center;
+    }
+  }
+
+  .ps__accordion-container {
+    font-size: 0.7rem;
+  }
+}
+
+@media screen and (max-height: 450px) {
+  .ps__close-button {
+    >* {
+      font-size: 0.3rem;
+    }
+
+    .ps__accordion-container {
+      font-size: 0.3rem;
+    }
+  }
+
+}
