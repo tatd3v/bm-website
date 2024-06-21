@@ -15,12 +15,23 @@ const initialState = {
   loading: {
     hideLoading: false,
   },
+  youtube: {
+    sidebar: {
+      isOpen: true,
+    },
+  },
 };
 
 const uiSlice = createSlice({
   name: 'ui',
-  initialState: initialState,
+  initialState,
   reducers: {
+    closeSidebar(state) {
+      state.youtube.sidebar.isOpen = false;
+    },
+    openSidebar(state) {
+      state.youtube.sidebar.isOpen = true;
+    },
     setHideLoading: (state, action) => {
       state.loading.hideLoading = action.payload;
     },
@@ -40,6 +51,8 @@ const uiSlice = createSlice({
 });
 
 export const {
+  closeSidebar,
+  openSidebar,
   setHideLoading,
   setIsAnimating,
   setShowCalendar,
