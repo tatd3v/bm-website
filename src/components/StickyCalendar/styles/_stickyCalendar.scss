@@ -1,12 +1,13 @@
 @import 'stickyVariables';
 
 .sticky-calendar-container {
-  position: fixed;
-  right: calc($button-radius/2);
+  align-items: center;
   bottom: 30%;
   display: flex;
-  align-items: center;
+  flex: 1;
   justify-content: center;
+  position: fixed;
+  right: calc($button-radius/2);
   z-index: 3;
 
   .inner-menu {
