@@ -6,6 +6,8 @@ import dataSlice, {
   setWordsData,
 } from './dataSlice';
 import uiSlice, {
+  closeSidebar,
+  openSidebar,
   setShowCalendar,
   setShowDictionary,
   setShowEvent,
@@ -13,8 +15,17 @@ import uiSlice, {
   setHideLoading,
 } from './uiSlice';
 
+import youtubePlaylistSlice, {
+  fetchPlaylists,
+  setCurrentVideo,
+} from './youtubePlaylistSlice';
+
 export {
+  closeSidebar,
+  openSidebar,
   dataSlice,
+  fetchPlaylists,
+  setCurrentVideo,
   setEventsData,
   setEventInfo,
   setHideLoading,
@@ -26,4 +37,5 @@ export {
   setWasFound,
   setWordsData,
   uiSlice,
+  youtubePlaylistSlice,
 };
