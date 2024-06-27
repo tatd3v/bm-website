@@ -1,3 +1,4 @@
 import { EventsCalendar } from './EventsCalendar.jsx';
+import { StickyCalendar } from './StickyCalendar';
 
-export { EventsCalendar };
+export { EventsCalendar, StickyCalendar };
