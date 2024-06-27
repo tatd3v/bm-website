@@ -3,83 +3,80 @@ $color2: rgb(49, 49, 49);
 $duration: 2s;
 $lineSize: 100px;
 
-.rootlayout__container {
+.header__navbar {
+  --bs-navbar-toggler-icon-bg: url('data:image/svg+xml,%3csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"%3e%3cpath stroke="rgba(255, 255, 255, 0.8)" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"/%3e%3c/svg%3e');
+  flex-shrink: 0;
+  padding: 0;
 
-  .header__navbar {
-    --bs-navbar-toggler-icon-bg: url('data:image/svg+xml,%3csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"%3e%3cpath stroke="rgba(255, 255, 255, 0.8)" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"/%3e%3c/svg%3e');
-    flex-shrink: 0;
-    padding: 0;
+  .header__nav {
+    &-container {
+      .header_nav-logo-toggle-container {
+        animation: stripeBackgroundPosition $duration linear infinite;
+        background: repeating-linear-gradient(45deg,
+            $color1 25%,
+            $color1 50%,
+            $color2 50%,
+            $color2 75%);
+        background-size: $lineSize $lineSize;
+        background-clip: text;
+        height: 100%;
+        padding: 0.1rem 0;
+        position: relative;
+        width: 100%;
 
-    .header__nav {
-      &-container {
-        .header_nav-logo-toggle-container {
-          animation: stripeBackgroundPosition $duration linear infinite;
-          background: repeating-linear-gradient(45deg,
-              $color1 25%,
-              $color1 50%,
-              $color2 50%,
-              $color2 75%);
-          background-size: $lineSize $lineSize;
-          background-clip: text;
-          height: 100%;
-          padding: 0.1rem 0;
-          position: relative;
-          width: 100%;
-
-          &::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: calc(100% + $lineSize);
-            height: 100%;
-            background: repeating-linear-gradient(45deg,
-                $color2 25%,
-                $color2 50%,
-                $color1 50%,
-                $color1 75%);
-            background-size: $lineSize $lineSize;
-            animation: stripeTransform $duration linear infinite;
-          }
-
-          &::after {
-            background: radial-gradient(ellipse at center, rgba(#1b2735, 0) 0%, #090a0f 100%);
-            content: '';
-            height: 100%;
-            position: absolute;
-            width: 100%;
-          }
-        }
-
-        .navbar-toggler {
-          border-color: #fff !important;
+        &::before {
+          content: '';
           position: absolute;
-          right: 3%;
+          top: 0;
+          left: 0;
+          width: calc(100% + $lineSize);
+          height: 100%;
+          background: repeating-linear-gradient(45deg,
+              $color2 25%,
+              $color2 50%,
+              $color1 50%,
+              $color1 75%);
+          background-size: $lineSize $lineSize;
+          animation: stripeTransform $duration linear infinite;
+        }
+
+        &::after {
+          background: radial-gradient(ellipse at center, rgba(#1b2735, 0) 0%, #090a0f 100%);
+          content: '';
+          height: 100%;
+          position: absolute;
+          width: 100%;
         }
       }
-    }
 
-    &-brand {
-
-      img {
-        height: auto;
-        max-width: 23%;
-        min-width: 20%;
-        z-index: 1;
-
-        @media (max-width: 576px) {
-          min-width: 27%;
-        }
-
-        @media (min-width: 577px) and (max-width: 768px) {
-          min-width: 25%;
-        }
+      .navbar-toggler {
+        border-color: #fff !important;
+        position: absolute;
+        right: 3%;
       }
     }
+  }
 
-    .navbar-toggler {
+  &-brand {
+
+    img {
+      height: auto;
+      max-width: 23%;
+      min-width: 20%;
       z-index: 1;
+
+      @media (max-width: 576px) {
+        min-width: 27%;
+      }
+
+      @media (min-width: 577px) and (max-width: 768px) {
+        min-width: 25%;
+      }
     }
+  }
+
+  .navbar-toggler {
+    z-index: 1;
   }
 }
 
