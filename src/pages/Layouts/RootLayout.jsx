@@ -3,32 +3,21 @@ import { Outlet } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 // @components
-import {
-  Dictionary,
-  EventsCalendar,
-  Header,
-  //FloatButton,
-  Footer,
-  StickyCalendar,
-} from '@components';
+import { Dictionary, Header, Footer, StickyCalendar } from '@components';
 
 export const RootLayout = () => {
-  const { showCalendar, showDictionary } = useSelector(
-    (state) => state.ui.calendar
-  );
+  const { showDictionary } = useSelector((state) => state.ui.calendar);
   return (
     <>
       <div className="rootlayout__container">
         <Header />
-        <main>
-          {/* <FloatButton /> */}
+        <main className="rootlayout__main">
           <StickyCalendar />
-          {showCalendar && <EventsCalendar />}
           {showDictionary && <Dictionary />}
           <Outlet />
         </main>
+        <Footer />
       </div>
-      <Footer />
     </>
   );
 };

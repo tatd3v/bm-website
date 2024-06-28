@@ -1,7 +1,8 @@
+// @vendors
 import { useState } from 'react';
 
-import { StickyButton } from './StickyButton';
-import { EventsCalendar } from '@components';
+// @components
+import { EventsCalendar, StickyButton } from '@components';
 
 import './styles/_stickyCalendar.scss';
 
@@ -15,8 +16,11 @@ export const StickyCalendar = () => {
   return (
     <div className={`sticky-calendar-container ${isOpen ? 'open' : ''}`}>
       <EventsCalendar isOpen={isOpen} />
-      <StickyButton onClick={toggleMenu} isOpen={isOpen} />
-      {/* <Menu isOpen={isOpen} items={items} /> */}
+      <StickyButton
+        onClick={toggleMenu}
+        isOpen={isOpen}
+        parentComponent="calendar"
+      />
     </div>
   );
 };

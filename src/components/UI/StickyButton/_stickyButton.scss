@@ -1,4 +1,4 @@
-@import 'stickyVariables';
+@import '../../Calendar/StickyCalendar/styles/stickyVariables';
 
 .outer-button {
   align-items: center;
@@ -12,6 +12,38 @@
   position: absolute;
   width: 60px;
   z-index: 4;
+
+  &.fade-out {
+    opacity: 0;
+  }
+
+  &.fade-in {
+    opacity: 1;
+  }
+
+  &.sidebar {
+    right: 10px;
+
+    &.open {
+      right: calc(20% + 10px);
+    }
+
+    &.closed {
+      right: 10px;
+    }
+  }
+
+  &.calendar {
+    left: 10px;
+
+    &.open {
+      left: 10px;
+    }
+
+    &.closed {
+      left: 10px;
+    }
+  }
 
   .icon-container {
     align-items: inherit;
@@ -69,6 +101,7 @@
     animation-fill-mode: forwards;
     animation-timing-function: $close-icon-timing-function;
   }
+
 }
 
 .outer-button::after,

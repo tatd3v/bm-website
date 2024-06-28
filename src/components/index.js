@@ -1,23 +1,24 @@
 import { BackgroundVideo } from './backgroundVideo';
 import { CalendarEvent } from './Modals';
 import { Dictionary } from './Dictionary';
-import { EventsCalendar } from './Calendar';
-import { FloatButton } from './UI';
+import { EventsCalendar, StickyCalendar } from './Calendar';
 import { Footer } from './Footer';
 import { Header } from './Header';
 import { LiveRadio } from './LiveRadio';
 import { Loading } from './Loading';
-import { StickyCalendar } from './StickyCalendar';
+import { PlaylistSidebar } from './YoutubePlaylists';
+import { StickyButton } from './UI';
 
 export {
   BackgroundVideo,
   CalendarEvent,
   Dictionary,
   EventsCalendar,
-  FloatButton,
   Footer,
   Header,
   LiveRadio,
   Loading,
+  PlaylistSidebar,
+  StickyButton,
   StickyCalendar,
 };

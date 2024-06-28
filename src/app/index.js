@@ -1,4 +1,8 @@
 import {
+  closeSidebar,
+  fetchPlaylists,
+  openSidebar,
+  setCurrentVideo,
   setEventsData,
   setEventInfo,
   setHideLoading,
@@ -13,6 +17,10 @@ import {
 import { store } from './store';
 
 export {
+  closeSidebar,
+  fetchPlaylists,
+  openSidebar,
+  setCurrentVideo,
   setEventsData,
   setEventInfo,
   setHideLoading,

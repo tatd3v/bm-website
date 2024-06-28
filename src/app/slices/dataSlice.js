@@ -19,7 +19,7 @@ const initialState = {
 
 const dataSlice = createSlice({
   name: 'data',
-  initialState: initialState,
+  initialState,
   reducers: {
     setEventsData: (state, action) => {
       state.calendar.eventsData = action.payload;

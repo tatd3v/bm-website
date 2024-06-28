@@ -1,9 +1,9 @@
 .footer {
   background: rgba(0, 0, 0, 0.4);
   bottom: 0;
+  flex-shrink: 0;
   height: 10%;
   padding: 0.4375rem;
-  position: fixed;
   width: 100%;
   z-index: 2;
 }
