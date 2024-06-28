@@ -1,9 +1,49 @@
-.ps__container {
-  background-color: #fff;
+@import "../../styles/colors";
+
+$button-animation: linear 3s infinite running slidebg;
+$rainbow-background: linear-gradient(to right, #FD6CB4, #FC0D1B, #FD8E25, #FFFD38, #128D15, #1FC0BF, #401195, #8D118C, #FD6CB4);
+
+@mixin videobutton() {
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+
+  &:active {
+    animation: $button-animation;
+    background-image: $rainbow-background;
+    border-color: transparent;
+    box-shadow: none;
+  }
+
+  :not(.btn-check)+.btn:active:active {
+    animation: $button-animation;
+    background-image: $rainbow-background;
+    border-color: transparent;
+    box-shadow: none;
+  }
+
+  &:focus,
+  &:active:focus {
+    animation: $button-animation;
+    background-image: $rainbow-background;
+    border-color: transparent;
+    color: #000;
+  }
+
+  &:visited {
+    animation: $button-animation;
+    background-image: $rainbow-background;
+  }
+}
+
+.ps__sidebar-container {
+  background: rgba(0, 0, 0, 0.4);
+  color: $main-font-color;
   display: flex;
   flex-direction: column;
+  max-height: 100%;
+  min-height: 100%;
   overflow-x: hidden;
-  transition: 0.5s;
+  transition: 0.6s;
   width: 0;
   z-index: 2;
 
@@ -12,7 +52,6 @@
   }
 
   >* {
-    color: #000;
     display: block;
     text-decoration: none;
     transition: 0.3s;
@@ -26,6 +65,11 @@
 
     .ps__close-button {
       margin-left: auto;
+
+      .btn-close {
+        background-color: #fff;
+
+      }
     }
 
     .ps__sidebar-title {
@@ -37,6 +81,55 @@
 
   .ps__accordion-container {
     font-size: 0.7rem;
+    max-height: 100%;
+    min-height: 100%;
+    overflow-y: auto;
+
+    .accordion-item {
+      background: $high_transparency;
+      border-color: #000;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+
+      .accordion-header {
+        .accordion-button {
+          background: $high_transparency;
+          color: $main-font-color;
+
+          &::after {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+          }
+
+          &:focus {
+            box-shadow: none;
+          }
+        }
+
+        .accordion-button:not(.collapsed) {
+          box-shadow: inset 0 calc(-1* var(--bs-accordion-border-width)) 0 #000;
+        }
+      }
+
+      .accordion-collapse {
+        .accordion-body {
+          .vstack {
+            .btn {
+              @include videobutton();
+            }
+          }
+        }
+      }
+
+      &:first-of-type>.accordion-header .accordion-button {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+      }
+    }
+  }
+
+  .ps__sticky-button-container {
+    bottom: 50%;
+    position: absolute;
   }
 }
 
@@ -51,4 +144,10 @@
     }
   }
 
+}
+
+@keyframes slidebg {
+  to {
+    background-position: 20vw;
+  }
 }

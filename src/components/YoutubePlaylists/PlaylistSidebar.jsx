@@ -1,10 +1,15 @@
 // @vendors
 import { useEffect } from 'react';
-import { Accordion, CloseButton } from 'react-bootstrap';
+import { Accordion, Button, CloseButton, Stack } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
 
 // @slices
-import { closeSidebar, fetchPlaylists, setCurrentVideo } from '@app';
+import {
+  closeSidebar,
+  fetchPlaylists,
+  openSidebar,
+  setCurrentVideo,
+} from '@app';
 
 // @styles
 import './_playlistSidebar.scss';
@@ -19,9 +24,6 @@ export default function PlaylistSidebar() {
   const error = useSelector((state) => state.youtubePlaylist.error);
   const isSidebarOpen = useSelector((state) => state.ui.youtube.sidebar.isOpen);
 
-  console.log('Playlist', typeof playlists, playlists.length);
-  console.log({ isSidebarOpen });
-
   useEffect(() => {
     if (status === 'idle') {
       dispatch(fetchPlaylists());
@@ -34,6 +36,10 @@ export default function PlaylistSidebar() {
 
   const handleCloseSidebar = () => {
     dispatch(closeSidebar());
+  };
+
+  const handleOpenSidebar = () => {
+    dispatch(openSidebar());
   };
 
   if (status === 'loading') {
@@ -50,41 +56,49 @@ export default function PlaylistSidebar() {
     <>
       <div
         id="sidebar"
-        className={`ps__container ${isSidebarOpen ? 'open' : ''}`}
+        className={`ps__sidebar-container ${isSidebarOpen ? 'open' : ''}`}
       >
         <div className="ps__sidebar-header">
           <div className="ps__close-button" onClick={handleCloseSidebar}>
             <CloseButton />
           </div>
-          <h4 className="ps__sidebar-title">Balls Playlist</h4>
+          <h4 className="ps__sidebar-title">Lista de Balls</h4>
         </div>
         <Accordion className="ps__accordion-container">
           {playlists.length > 0 ? (
-            playlists.map((playlist) => (
-              <Accordion.Item key={playlist.id} eventKey="0">
+            playlists.map((playlist, index) => (
+              <Accordion.Item key={playlist.id} eventKey={index}>
                 <Accordion.Header>{playlist.title}</Accordion.Header>
                 <Accordion.Body>
-                  <ul>
+                  <Stack direction="vertical" gap={2}>
                     {playlist.videos &&
                       playlist.videos.map((item) => (
-                        <li key={item.videoId}>
-                          <button
-                            onClick={() => handleVideoClick(item.videoId)}
-                          >
-                            {item.title}
-                          </button>
-                        </li>
+                        <Button
+                          className="ps__video-button"
+                          variant="outline-light"
+                          key={item.videoId}
+                          onClick={() => handleVideoClick(item.videoId)}
+                        >
+                          {item.title}
+                        </Button>
                       ))}
-                  </ul>
+                  </Stack>
                 </Accordion.Body>
               </Accordion.Item>
             ))
           ) : (
-            <div>No playlists found</div>
+            <div>No se han encontrado listas de Youtube.</div>
           )}
         </Accordion>
+
+        <div className="ps__sticky-button-container">
+          <StickyButton
+            onClick={handleOpenSidebar}
+            isOpen={isSidebarOpen}
+            parentComponent="sidebar"
+          />
+        </div>
       </div>
-      <StickyButton />
     </>
   );
 }
