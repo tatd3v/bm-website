@@ -12,7 +12,6 @@ export const RootLayout = () => {
       <div className="rootlayout__container">
         <Header />
         <main className="rootlayout__main">
-          {/* <FloatButton /> */}
           <StickyCalendar />
           {showDictionary && <Dictionary />}
           <Outlet />
