@@ -1,7 +1,7 @@
 // @vendors
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-/// @api
+// @api
 import { fetchMultiplePlaylists } from '@api/Youtube';
 
 const YOUTUBE_CHANNEL_ID = process.env.VITE_YOUTUBE_CHANNEL_ID;
@@ -47,6 +47,9 @@ const youtubePlaylistSlice = createSlice({
           title: playlist.title,
           videos: playlist.videos,
         }));
+        state.currentVideo = action.payload.flatMap((item) =>
+          item.videos.map((video) => video.videoId)
+        )[0];
       })
       .addCase(fetchPlaylists.rejected, (state, action) => {
         state.status = 'failed';
