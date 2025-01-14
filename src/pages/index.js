@@ -1,7 +1,7 @@
 import { ErrorPage } from './Error';
 import { GalleryByBall, PhotosPage, VideosPage } from './Gallery';
 import { HomePage } from './Home';
-import { GalleryLayout, RootLayout } from './Layouts';
+import { GalleryLayout, RootLayout, YoutubeLayout } from './Layouts';
 
 export {
   ErrorPage,
@@ -11,4 +11,5 @@ export {
   PhotosPage,
   RootLayout,
   VideosPage,
+  YoutubeLayout,
 };
