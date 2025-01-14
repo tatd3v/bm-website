@@ -3,47 +3,23 @@
 $button-animation: linear 3s infinite running slidebg;
 $rainbow-background: linear-gradient(to right, #FD6CB4, #FC0D1B, #FD8E25, #FFFD38, #128D15, #1FC0BF, #401195, #8D118C, #FD6CB4);
 
-@mixin videobutton() {
-  font-size: 0.7rem;
-  letter-spacing: 1px;
-
-  &:active {
-    animation: $button-animation;
-    background-image: $rainbow-background;
-    border-color: transparent;
-    box-shadow: none;
-  }
-
-  :not(.btn-check)+.btn:active:active {
-    animation: $button-animation;
-    background-image: $rainbow-background;
-    border-color: transparent;
-    box-shadow: none;
-  }
-
-  &:focus,
-  &:active:focus {
-    animation: $button-animation;
-    background-image: $rainbow-background;
-    border-color: transparent;
-    color: #000;
-  }
-
-  &:visited {
-    animation: $button-animation;
-    background-image: $rainbow-background;
-  }
+@mixin animation() {
+  animation: $button-animation;
+  background-image: $rainbow-background;
+  border-color: transparent;
+  box-shadow: none;
+  color: #000;
 }
 
 .ps__sidebar-container {
-  background: rgba(0, 0, 0, 0.4);
+  background: $high-transparency;
   color: $main-font-color;
   display: flex;
   flex-direction: column;
   max-height: 100%;
   min-height: 100%;
-  overflow-x: hidden;
-  transition: 0.6s;
+  overflow: hidden;
+  transition: width 0.6s;
   width: 0;
   z-index: 2;
 
@@ -82,8 +58,6 @@ $rainbow-background: linear-gradient(to right, #FD6CB4, #FC0D1B, #FD8E25, #FFFD3
 
   .ps__accordion-container {
     font-size: 0.7rem;
-    max-height: 100%;
-    min-height: 100%;
     overflow-y: auto;
 
     .accordion-item {
@@ -115,7 +89,16 @@ $rainbow-background: linear-gradient(to right, #FD6CB4, #FC0D1B, #FD8E25, #FFFD3
         .accordion-body {
           .vstack {
             .btn {
-              @include videobutton();
+              font-size: 0.7rem;
+              letter-spacing: 1px;
+
+              &.animate,
+              &:active,
+              &:focus,
+              &:visited,
+              :not(.btn-check)+.btn:active:active {
+                @include animation();
+              }
             }
           }
         }
@@ -126,11 +109,6 @@ $rainbow-background: linear-gradient(to right, #FD6CB4, #FC0D1B, #FD8E25, #FFFD3
         border-top-right-radius: 0;
       }
     }
-  }
-
-  .ps__sticky-button-container {
-    bottom: 50%;
-    position: absolute;
   }
 }
 
@@ -144,7 +122,6 @@ $rainbow-background: linear-gradient(to right, #FD6CB4, #FC0D1B, #FD8E25, #FFFD3
       font-size: 0.3rem;
     }
   }
-
 }
 
 @keyframes slidebg {
