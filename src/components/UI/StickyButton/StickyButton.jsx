@@ -35,34 +35,36 @@ export const StickyButton = ({ onClick, isOpen, parentComponent }) => {
   };
 
   return (
-    <div
-      className={`outer-button ${isAnimating ? 'clicked' : ''} ${
-        parentComponent === 'sidebar'
-          ? !shouldShowButton
-            ? 'fade-out'
-            : 'fade-in'
-          : ''
-      }`}
-      onClick={handleClick}
-      onAnimationStart={handleAnimationStart}
-      onAnimationEnd={handleAnimationEnd}
-    >
-      <div className="icon-container">
-        {parentComponent === 'calendar' ? (
-          <>
-            <VscCalendar
-              className={`calendar-icon ${isOpen ? 'hide' : 'show'}`}
+    <div className="sb__container">
+      <div
+        className={`outer-button ${isAnimating ? 'clicked' : ''} ${
+          parentComponent === 'sidebar'
+            ? !shouldShowButton
+              ? 'fade-out'
+              : 'fade-in'
+            : ''
+        }`}
+        onClick={handleClick}
+        onAnimationStart={handleAnimationStart}
+        onAnimationEnd={handleAnimationEnd}
+      >
+        <div className="icon-container">
+          {parentComponent === 'calendar' ? (
+            <>
+              <VscCalendar
+                className={`calendar-icon ${isOpen ? 'hide' : 'show'}`}
+              />
+              <RiCloseLargeFill
+                className={`close-icon ${isOpen ? 'show' : 'hide'}`}
+              />
+            </>
+          ) : parentComponent === 'sidebar' ? (
+            <TbLayoutSidebarLeftExpand
+              className="sb__open-sidebar-icon"
+              size={32}
             />
-            <RiCloseLargeFill
-              className={`close-icon ${isOpen ? 'show' : 'hide'}`}
-            />
-          </>
-        ) : parentComponent === 'sidebar' ? (
-          <TbLayoutSidebarLeftExpand
-            className="sb__open-sidebar-icon"
-            size={32}
-          />
-        ) : null}
+          ) : null}
+        </div>
       </div>
     </div>
   );

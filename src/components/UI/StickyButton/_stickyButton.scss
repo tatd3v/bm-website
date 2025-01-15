@@ -1,16 +1,26 @@
 @import '../../Calendar/StickyCalendar/styles/stickyVariables';
+@import '../../../styles/mixins';
+
+$animation-duration: 1000ms;
+$icon-dimensions: 25px;
+$outer-button-size: 60px;
+
+.sb__container {
+  position: absolute;
+  bottom: 50%;
+  left: 0;
+  z-index: 5;
+}
 
 .outer-button {
-  align-items: center;
+  @include flex-center();
+  position: absolute;
   background: rgba(0, 0, 0, 0.4);
   border-radius: 50%;
   box-shadow: 10px 10px 18px 5px rgba(0, 0, 0, 0.2);
   cursor: pointer;
-  display: flex;
-  height: 60px;
-  justify-content: center;
-  position: absolute;
-  width: 60px;
+  width: $outer-button-size;
+  height: $outer-button-size;
   z-index: 4;
 
   &.fade-out {
@@ -22,27 +32,11 @@
   }
 
   &.sidebar {
-    right: 10px;
-
-    &.open {
-      right: calc(20% + 10px);
-    }
-
-    &.closed {
-      right: 10px;
-    }
+    right: calc(20% + 10px);
   }
 
   &.calendar {
-    left: 10px;
-
-    &.open {
-      left: 10px;
-    }
-
-    &.closed {
-      left: 10px;
-    }
+    left: calc(20% + 10px);
   }
 
   .icon-container {

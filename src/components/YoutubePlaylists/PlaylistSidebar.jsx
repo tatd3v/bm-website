@@ -4,24 +4,16 @@ import { Accordion, Button, CloseButton, Stack } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
 
 // @slices
-import {
-  closeSidebar,
-  fetchPlaylists,
-  openSidebar,
-  setCurrentVideo,
-} from '@app';
+import { closeSidebar, fetchPlaylists, setCurrentVideo } from '@app';
 
 // @styles
 import './_playlistSidebar.scss';
 
-// @components
-import { StickyButton } from '@components';
-
 export default function PlaylistSidebar() {
   const dispatch = useDispatch();
-  const playlists = useSelector((state) => state.youtubePlaylist.playlists);
-  const status = useSelector((state) => state.youtubePlaylist.status);
-  const error = useSelector((state) => state.youtubePlaylist.error);
+  const { currentVideo, error, playlists, status } = useSelector(
+    (state) => state.youtubePlaylist
+  );
   const isSidebarOpen = useSelector((state) => state.ui.youtube.sidebar.isOpen);
 
   useEffect(() => {
@@ -38,10 +30,6 @@ export default function PlaylistSidebar() {
     dispatch(closeSidebar());
   };
 
-  const handleOpenSidebar = () => {
-    dispatch(openSidebar());
-  };
-
   if (status === 'loading') {
     return <div>Loading...</div>;
   }
@@ -49,8 +37,6 @@ export default function PlaylistSidebar() {
   if (status === 'failed') {
     return <div>Error: {error}</div>;
   }
-
-  console.log({ playlists });
 
   return (
     <>
@@ -64,7 +50,7 @@ export default function PlaylistSidebar() {
           </div>
           <h4 className="ps__sidebar-title">Lista de Balls</h4>
         </div>
-        <Accordion className="ps__accordion-container">
+        <Accordion className="ps__accordion-container" defaultActiveKey={0}>
           {playlists.length > 0 ? (
             playlists.map((playlist, index) => (
               <Accordion.Item key={playlist.id} eventKey={index}>
@@ -74,7 +60,9 @@ export default function PlaylistSidebar() {
                     {playlist.videos &&
                       playlist.videos.map((item) => (
                         <Button
-                          className="ps__video-button"
+                          className={`ps__video-button ${
+                            currentVideo === item.videoId && 'animate'
+                          }`}
                           variant="outline-light"
                           key={item.videoId}
                           onClick={() => handleVideoClick(item.videoId)}
@@ -90,14 +78,6 @@ export default function PlaylistSidebar() {
             <div>No se han encontrado listas de Youtube.</div>
           )}
         </Accordion>
-
-        <div className="ps__sticky-button-container">
-          <StickyButton
-            onClick={handleOpenSidebar}
-            isOpen={isSidebarOpen}
-            parentComponent="sidebar"
-          />
-        </div>
       </div>
     </>
   );

@@ -6,7 +6,7 @@ import { Footer } from './Footer';
 import { Header } from './Header';
 import { LiveRadio } from './LiveRadio';
 import { Loading } from './Loading';
-import { PlaylistSidebar } from './YoutubePlaylists';
+import { PlaylistSidebar, YoutubeEmbed } from './YoutubePlaylists';
 import { StickyButton } from './UI';
 
 export {
@@ -21,4 +21,5 @@ export {
   PlaylistSidebar,
   StickyButton,
   StickyCalendar,
+  YoutubeEmbed,
 };
