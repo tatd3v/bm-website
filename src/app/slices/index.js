@@ -6,24 +6,36 @@ import dataSlice, {
   setWordsData,
 } from './dataSlice';
 import uiSlice, {
-  setHideLoading,
+  closeSidebar,
+  openSidebar,
   setShowCalendar,
   setShowDictionary,
   setShowEvent,
-  setShowSubNavbar,
+  setIsAnimating,
+  setHideLoading,
 } from './uiSlice';
 
+import youtubePlaylistSlice, {
+  fetchPlaylists,
+  setCurrentVideo,
+} from './youtubePlaylistSlice';
+
 export {
+  closeSidebar,
+  openSidebar,
   dataSlice,
+  fetchPlaylists,
+  setCurrentVideo,
   setEventsData,
   setEventInfo,
   setHideLoading,
+  setIsAnimating,
   setShowCalendar,
   setShowDictionary,
   setSearchedWord,
   setShowEvent,
-  setShowSubNavbar,
   setWasFound,
   setWordsData,
   uiSlice,
+  youtubePlaylistSlice,
 };

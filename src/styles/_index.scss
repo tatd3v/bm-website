@@ -1,19 +1,16 @@
 @import 'colors';
 @import 'fonts';
+@import 'sizes';
 
 * {
   margin: 0;
   padding: 0;
 }
 
-:root {
-  --app-height: 100svh;
-}
-
 html,
 body {
   height: 100svh;
-  height: var(--app-height);
+  height: $app-height;
   margin: 0;
   overflow: hidden;
   padding: 0;
@@ -23,13 +20,10 @@ body {
 #root {
   display: flex;
   flex-direction: column;
-  height: var(--app-height);
+  height: $app-height;
   position: relative;
 }
 
-main {
-  height: 100%;
-}
 
 body {
   background: none transparent;
@@ -50,4 +44,81 @@ body {
   font-weight: $main-weight;
   font-style: $main-font-style;
   font-variation-settings: $roboto-variation;
+}
+
+// Background Styles
+.rootlayout__container {
+  animation: AnimationName 43s ease infinite;
+  background: linear-gradient(135deg, #6d5b5b, #641515, #460808, #2b0202, #000000, #ff0000, #fbeeee);
+  background-size: 1400% 1400%;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  -webkit-animation: AnimationName 43s ease infinite;
+  -moz-animation: AnimationName 43s ease infinite;
+  -o-animation: AnimationName 43s ease infinite;
+
+  .rootlayout__main {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow-y: hidden;
+  }
+}
+
+@-webkit-keyframes AnimationName {
+  0% {
+    background-position: 0% 10%
+  }
+
+  50% {
+    background-position: 100% 91%
+  }
+
+  100% {
+    background-position: 0% 10%
+  }
+}
+
+@-moz-keyframes AnimationName {
+  0% {
+    background-position: 0% 10%
+  }
+
+  50% {
+    background-position: 100% 91%
+  }
+
+  100% {
+    background-position: 0% 10%
+  }
+}
+
+@-o-keyframes AnimationName {
+  0% {
+    background-position: 0% 10%
+  }
+
+  50% {
+    background-position: 100% 91%
+  }
+
+  100% {
+    background-position: 0% 10%
+  }
+}
+
+@keyframes AnimationName {
+  0% {
+    background-position: 0% 10%
+  }
+
+  50% {
+    background-position: 100% 91%
+  }
+
+  100% {
+    background-position: 0% 10%
+  }
 }

@@ -1,0 +1,131 @@
+@import "../../styles/colors";
+
+$button-animation: linear 3s infinite running slidebg;
+$rainbow-background: linear-gradient(to right, #FD6CB4, #FC0D1B, #FD8E25, #FFFD38, #128D15, #1FC0BF, #401195, #8D118C, #FD6CB4);
+
+@mixin animation() {
+  animation: $button-animation;
+  background-image: $rainbow-background;
+  border-color: transparent;
+  box-shadow: none;
+  color: #000;
+}
+
+.ps__sidebar-container {
+  background: $high-transparency;
+  color: $main-font-color;
+  display: flex;
+  flex-direction: column;
+  max-height: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  transition: width 0.6s;
+  width: 0;
+  z-index: 2;
+
+  &.open {
+    width: 20%;
+  }
+
+  >* {
+    display: block;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+
+  .ps__sidebar-header {
+    align-items: center;
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 0.5rem 1.25rem;
+
+    .ps__close-button {
+      margin-left: auto;
+
+      .btn-close {
+        background-color: #fff;
+
+      }
+    }
+
+    .ps__sidebar-title {
+      flex-grow: 1;
+      font-weight: 700;
+      margin: 0;
+      text-align: center;
+    }
+  }
+
+  .ps__accordion-container {
+    font-size: 0.7rem;
+    overflow-y: auto;
+
+    .accordion-item {
+      background: $high_transparency;
+      border-color: #000;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+
+      .accordion-header {
+        .accordion-button {
+          background: $high_transparency;
+          color: $main-font-color;
+
+          &::after {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+          }
+
+          &:focus {
+            box-shadow: none;
+          }
+        }
+
+        .accordion-button:not(.collapsed) {
+          box-shadow: inset 0 calc(-1* var(--bs-accordion-border-width)) 0 #000;
+        }
+      }
+
+      .accordion-collapse {
+        .accordion-body {
+          .vstack {
+            .btn {
+              font-size: 0.7rem;
+              letter-spacing: 1px;
+
+              &.animate,
+              &:active,
+              &:focus,
+              &:visited,
+              :not(.btn-check)+.btn:active:active {
+                @include animation();
+              }
+            }
+          }
+        }
+      }
+
+      &:first-of-type>.accordion-header .accordion-button {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-height: 450px) {
+  .ps__close-button {
+    >* {
+      font-size: 0.3rem;
+    }
+
+    .ps__accordion-container {
+      font-size: 0.3rem;
+    }
+  }
+}
+
+@keyframes slidebg {
+  to {
+    background-position: 20vw;
+  }
+}

@@ -3,29 +3,40 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   calendar: {
+    isAnimating: false,
     showCalendar: false,
     showDictionary: false,
     showEvent: false,
   },
   device: {
     appHeight: '100vh',
-    isMobile: window.innerWidth <= 991,
     isSafari: /^((?!chrome|android).)*safari/i.test(navigator.userAgent),
   },
-  header: {
-    showSubNavbar: false,
-  },
   loading: {
-    hide: false,
+    hideLoading: false,
+  },
+  youtube: {
+    sidebar: {
+      isOpen: true,
+    },
   },
 };
 
 const uiSlice = createSlice({
   name: 'ui',
-  initialState: initialState,
+  initialState,
   reducers: {
+    closeSidebar(state) {
+      state.youtube.sidebar.isOpen = false;
+    },
+    openSidebar(state) {
+      state.youtube.sidebar.isOpen = true;
+    },
     setHideLoading: (state, action) => {
-      state.loading.hide = action.payload;
+      state.loading.hideLoading = action.payload;
+    },
+    setIsAnimating: (state, action) => {
+      state.calendar.isAnimating = action.payload;
     },
     setShowCalendar: (state, action) => {
       state.calendar.showCalendar = action.payload;
@@ -36,18 +47,17 @@ const uiSlice = createSlice({
     setShowEvent: (state, action) => {
       state.calendar.showEvent = action.payload;
     },
-    setShowSubNavbar: (state) => {
-      state.header.showSubNavbar = !state.header.showSubNavbar;
-    },
   },
 });
 
 export const {
+  closeSidebar,
+  openSidebar,
   setHideLoading,
+  setIsAnimating,
   setShowCalendar,
   setShowDictionary,
   setShowEvent,
-  setShowSubNavbar,
 } = uiSlice.actions;
 
 export default uiSlice.reducer;

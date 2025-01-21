@@ -1,10 +1,26 @@
+@mixin dots($count) {
+  $text-shadow: ();
+
+  @for $i from 0 through $count {
+    $text-shadow: $text-shadow,
+      (-.5+(random()) * 3) + em (-.5+(random()) * 3) + em 7px hsla(random() * 360, 100%, 50%, .9);
+  }
+
+  text-shadow: $text-shadow;
+}
+
 .smn_container {
   align-items: center;
+  background: transparent;
+  color: transparent;
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
-  max-width: fit-content;
-  padding: 0.7rem 0;
+  justify-content: space-around;
+  max-width: 100%;
+  min-width: 100%;
+  overflow: hidden;
+  padding: 0.3rem 0;
+  position: relative;
 }
 
 .smn_container :nth-child(3) {
