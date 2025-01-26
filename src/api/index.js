@@ -1,3 +1,3 @@
-import { fetchMultiplePlaylists } from './Youtube';
+import { fetchPlaylistsData } from './youtube';
 
-export { fetchMultiplePlaylists };
+export { fetchPlaylistsData };
