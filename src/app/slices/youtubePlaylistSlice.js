@@ -2,9 +2,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 // @api
-import { fetchMultiplePlaylists } from '@api/Youtube';
-
-const YOUTUBE_CHANNEL_ID = process.env.VITE_YOUTUBE_CHANNEL_ID;
+import { fetchPlaylistsData } from '@api';
 
 const initialState = {
   currentVideo: '',
@@ -17,8 +15,7 @@ export const fetchPlaylists = createAsyncThunk(
   'playlist/fetchPlaylists',
   async (_, thunkAPI) => {
     try {
-      const playlists = await fetchMultiplePlaylists(YOUTUBE_CHANNEL_ID);
-      return playlists;
+      return await fetchPlaylistsData();
     } catch (error) {
       return thunkAPI.rejectWithValue('Failed to fetch playlists');
     }
