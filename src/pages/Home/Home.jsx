@@ -1,5 +1,5 @@
 // @components
-import { YoutubeEmbed } from '@/components';
+import { YoutubeEmbed } from '@components';
 
 // @styles
 import './_home.scss';
