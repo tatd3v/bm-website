@@ -1,6 +1,6 @@
-@use 'colors';
-@use 'fonts';
-@use 'sizes';
+@use 'colors' as *;
+@use 'fonts' as *;
+@use 'sizes' as *;
 
 * {
   margin: 0;
