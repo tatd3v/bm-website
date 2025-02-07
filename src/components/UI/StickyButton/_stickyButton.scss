@@ -1,5 +1,5 @@
-@import '../../Calendar/StickyCalendar/styles/stickyVariables';
-@import '../../../styles/mixins';
+@use '../../Calendar/StickyCalendar/styles/stickyVariables' as *;
+@use '../../../styles/mixins' as *;
 
 $animation-duration: 1000ms;
 $icon-dimensions: 25px;

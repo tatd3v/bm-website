@@ -1,10 +1,15 @@
-import { instagramLogo, tikTokLogo, youtubeLogo } from '../../../assets/images';
+import { instagramLogo, telegramLogo, tikTokLogo, youtubeLogo } from '../../../assets/images';
 
 export const logos = [
   {
     name: 'instagram logo',
     source: instagramLogo,
     url: 'https://www.instagram.com/ballroomedellin__',
+  },
+  {
+    name: 'telegram logo',
+    source: telegramLogo,
+    url: 'https://t.me/+YO4LwtB-ceo0MWI5'
   },
   {
     name: 'tiktok logo',
