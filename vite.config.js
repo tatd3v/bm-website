@@ -7,6 +7,13 @@ import EnvironmentPlugin from 'vite-plugin-environment';
 
 export default defineConfig({
   plugins: [EnvironmentPlugin('all'), eslintPlugin(), react()],
+  css: {
+    preprocessorOptions: {
+      scss: {
+        silenceDeprecations: ["legacy-js-api"],
+      },
+    },
+  },
   server: {
     host: true,
   },
