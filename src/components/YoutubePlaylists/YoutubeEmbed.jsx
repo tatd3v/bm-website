@@ -1,6 +1,6 @@
 // @vendors
 import { memo, useMemo, useState, useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useSelector } from 'react-redux';
 
 // @components
 import { Loading } from "../Loading";
