@@ -1,4 +1,4 @@
-@import "../../styles/colors";
+@use "../../styles/colors" as *;
 
 $button-animation: linear 3s infinite running slidebg;
 $rainbow-background: linear-gradient(to right, #FD6CB4, #FC0D1B, #FD8E25, #FFFD38, #128D15, #1FC0BF, #401195, #8D118C, #FD6CB4);
