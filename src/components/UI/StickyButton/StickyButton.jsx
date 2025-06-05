@@ -10,59 +10,40 @@ export const StickyButton = ({ onClick, isOpen, parentComponent }) => {
   const [shouldShowButton, setShouldShowButton] = useState(false);
 
   useEffect(() => {
-    if (!isOpen && parentComponent === 'sidebar') {
+    if (parentComponent === 'sidebar' && !isOpen) {
       const timer = setTimeout(() => setShouldShowButton(true), 500);
       return () => clearTimeout(timer);
-    } else {
-      setShouldShowButton(false);
     }
+    setShouldShowButton(false);
   }, [isOpen, parentComponent]);
-
-  const handleAnimationStart = () => {
-    setIsAnimating(true);
-  };
-
-  const handleAnimationEnd = () => {
-    setIsAnimating(false);
-  };
 
   const handleClick = () => {
     if (isAnimating) return;
-
     onClick();
     setIsAnimating(true);
     setTimeout(() => setIsAnimating(false), 1000);
   };
 
+  const buttonClasses = [
+    'outer-button',
+    parentComponent,
+    isAnimating && 'clicked',
+    parentComponent === 'sidebar' && (shouldShowButton ? 'fade-in' : 'fade-out'),
+  ]
+    .filter(Boolean)
+    .join(' ');
+
   return (
     <div className={`sb__container ${parentComponent}`}>
-      <div
-        className={`outer-button ${parentComponent} ${isAnimating ? 'clicked' : ''
-          } ${parentComponent === 'sidebar'
-            ? !shouldShowButton
-              ? 'fade-out'
-              : 'fade-in'
-            : ''
-          }`}
-        onClick={handleClick}
-        onAnimationStart={handleAnimationStart}
-        onAnimationEnd={handleAnimationEnd}
-      >
+      <div className={buttonClasses} onClick={handleClick}>
         <div className="icon-container">
           {parentComponent === 'calendar' ? (
             <>
-              <VscCalendar
-                className={`calendar-icon ${isOpen ? 'hide' : 'show'}`}
-              />
-              <RiCloseLargeFill
-                className={`close-icon ${isOpen ? 'show' : 'hide'}`}
-              />
+              <VscCalendar className={`calendar-icon ${isOpen ? 'hide' : 'show'}`} />
+              <RiCloseLargeFill className={`close-icon ${isOpen ? 'show' : 'hide'}`} />
             </>
           ) : parentComponent === 'sidebar' ? (
-            <TbLayoutSidebarLeftExpand
-              className="sb__open-sidebar-icon"
-              size={32}
-            />
+            <TbLayoutSidebarLeftExpand className="sb__open-sidebar-icon" size={32} />
           ) : null}
         </div>
       </div>
