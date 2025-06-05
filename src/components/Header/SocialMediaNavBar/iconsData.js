@@ -4,7 +4,7 @@ export const logos = [
   {
     name: 'instagram logo',
     source: instagramLogo,
-    url: 'https://www.instagram.com/ballroomedellin__',
+    url: 'https://www.instagram.com/ballroommed/',
   },
   {
     name: 'telegram logo',
