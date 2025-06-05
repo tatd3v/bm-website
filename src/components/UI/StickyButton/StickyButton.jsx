@@ -35,15 +35,15 @@ export const StickyButton = ({ onClick, isOpen, parentComponent }) => {
   };
 
   return (
-    <div className="sb__container">
+    <div className={`sb__container ${parentComponent}`}>
       <div
-        className={`outer-button ${isAnimating ? 'clicked' : ''} ${
-          parentComponent === 'sidebar'
+        className={`outer-button ${parentComponent} ${isAnimating ? 'clicked' : ''
+          } ${parentComponent === 'sidebar'
             ? !shouldShowButton
               ? 'fade-out'
               : 'fade-in'
             : ''
-        }`}
+          }`}
         onClick={handleClick}
         onAnimationStart={handleAnimationStart}
         onAnimationEnd={handleAnimationEnd}
