@@ -6,6 +6,9 @@ import { useSelector, useDispatch } from 'react-redux';
 // @slices
 import { closeSidebar, fetchPlaylists, setCurrentVideo } from '@app';
 
+// @components
+import { Loading } from '@components';
+
 // @styles
 import './_playlistSidebar.scss';
 
@@ -31,11 +34,11 @@ export default function PlaylistSidebar() {
   };
 
   if (status === 'loading') {
-    return <div>Loading...</div>;
+    return <Loading />;
   }
 
-  if (status === 'failed') {
-    return <div>Error: {error}</div>;
+  if (status === 'failed' && playlists.length === 0) {
+    return <div className="error-message">Error: {error}</div>;
   }
 
   return (
@@ -60,9 +63,8 @@ export default function PlaylistSidebar() {
                     {playlist.videos &&
                       playlist.videos.map((item) => (
                         <Button
-                          className={`ps__video-button ${
-                            currentVideo === item.videoId && 'animate'
-                          }`}
+                          className={`ps__video-button ${currentVideo === item.videoId && 'animate'
+                            }`}
                           variant="outline-light"
                           key={item.videoId}
                           onClick={() => handleVideoClick(item.videoId)}
