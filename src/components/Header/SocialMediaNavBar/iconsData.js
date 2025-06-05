@@ -12,21 +12,6 @@ export const logos = [
     url: 'https://t.me/+YO4LwtB-ceo0MWI5'
   },
   {
-    name: 'telegram logo',
-    source: telegramLogo,
-    url: 'https://t.me/+YO4LwtB-ceo0MWI5'
-  },
-  {
-    name: 'telegram logo',
-    source: telegramLogo,
-    url: 'https://t.me/+YO4LwtB-ceo0MWI5'
-  },
-  {
-    name: 'telegram logo',
-    source: telegramLogo,
-    url: 'https://t.me/+YO4LwtB-ceo0MWI5'
-  },
-  {
     name: 'tiktok logo',
     source: tikTokLogo,
     url: 'https://www.tiktok.com/@ballroommedellin',
