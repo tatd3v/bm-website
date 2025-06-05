@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 // @components
-import { Dictionary, Header, Footer, StickyCalendar } from '@components';
+import { Dictionary, Header, StickyCalendar } from '@components';
 
 export const RootLayout = () => {
   const { showDictionary } = useSelector((state) => state.ui.calendar);
@@ -16,7 +16,7 @@ export const RootLayout = () => {
           {showDictionary && <Dictionary />}
           <Outlet />
         </main>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </>
   );
