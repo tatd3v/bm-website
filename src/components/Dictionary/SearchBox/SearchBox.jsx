@@ -45,7 +45,7 @@ export const SearchBox = () => {
       className="searchBox d-flex flex-colum justify-content-center m-3 w-70"
       onSubmit={handleSearchSubmit}
     >
-      <Form.Group className="sb__button-container d-flex justify-content-center">
+      <Form.Group className="search-box__button-container d-flex justify-content-center">
         <Form.Control
           className="border-right-0"
           type="text"
