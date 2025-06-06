@@ -1,4 +1,4 @@
-@use "../../styles/colors" as *;
+@use "../../styles/colors"as *;
 
 $button-animation: linear 3s infinite running slidebg;
 $rainbow-background: linear-gradient(to right, #FD6CB4, #FC0D1B, #FD8E25, #FFFD38, #128D15, #1FC0BF, #401195, #8D118C, #FD6CB4);
@@ -24,7 +24,7 @@ $rainbow-background: linear-gradient(to right, #FD6CB4, #FC0D1B, #FD8E25, #FFFD3
   z-index: 2;
 
   &.open {
-    width: 20%;
+    width: 100%;
   }
 
   >* {
@@ -120,6 +120,15 @@ $rainbow-background: linear-gradient(to right, #FD6CB4, #FC0D1B, #FD8E25, #FFFD3
 
     .ps__accordion-container {
       font-size: 0.3rem;
+    }
+  }
+
+}
+
+@media screen and (min-width: 800px) {
+  .ps__sidebar-container {
+    &.open {
+      width: 20%;
     }
   }
 }
