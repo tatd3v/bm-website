@@ -1,7 +1,7 @@
 {
   "name": "bm-website",
   "private": true,
-  "packageManager": "pnpm@8.10.2",
+  "packageManager": "pnpm@10.11.1",
   "version": "0.0.0",
   "type": "commonjs",
   "scripts": {
@@ -23,6 +23,7 @@
     "react-icons": "^5.2.1",
     "react-redux": "^8.0.7",
     "react-router-dom": "^6.11.2",
+    "react-youtube": "^10.1.0",
     "redux": "^5.0.1",
     "redux-thunk": "^3.1.0",
     "sass": "^1.84.0"
