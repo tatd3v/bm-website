@@ -2,7 +2,6 @@
 import { defineConfig } from 'vite';
 import fs from 'fs';
 import react from '@vitejs/plugin-react';
-import eslintPlugin from 'vite-plugin-eslint';
 import path from 'path';
 import EnvironmentPlugin from 'vite-plugin-environment';
 
@@ -23,7 +22,7 @@ export default defineConfig(({ mode }) => {
   }
 
   return {
-    plugins: [EnvironmentPlugin('all'), eslintPlugin(), react()],
+    plugins: [EnvironmentPlugin('all'), react()],
     css: {
       preprocessorOptions: {
         scss: {
