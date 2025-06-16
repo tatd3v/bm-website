@@ -1,4 +1,4 @@
-@use "../../styles/colors" as *;
+@use "../../styles/colors"as *;
 
 $button-animation: linear 3s infinite running slidebg;
 $rainbow-background: linear-gradient(to right, #FD6CB4, #FC0D1B, #FD8E25, #FFFD38, #128D15, #1FC0BF, #401195, #8D118C, #FD6CB4);
@@ -12,19 +12,20 @@ $rainbow-background: linear-gradient(to right, #FD6CB4, #FC0D1B, #FD8E25, #FFFD3
 }
 
 .ps__sidebar-container {
-  background: $high-transparency;
+  background: $low-transparency;
   color: $main-font-color;
   display: flex;
   flex-direction: column;
-  max-height: 100%;
+  height: 100%;
   min-height: 100%;
   overflow: hidden;
+  position: fixed;
   transition: width 0.6s;
   width: 0;
-  z-index: 2;
+  z-index: 10;
 
   &.open {
-    width: 20%;
+    width: 100vw;
   }
 
   >* {
@@ -35,6 +36,7 @@ $rainbow-background: linear-gradient(to right, #FD6CB4, #FC0D1B, #FD8E25, #FFFD3
 
   .ps__sidebar-header {
     align-items: center;
+    background: $low-transparency;
     display: flex;
     flex-direction: row-reverse;
     padding: 0.5rem 1.25rem;
@@ -120,6 +122,15 @@ $rainbow-background: linear-gradient(to right, #FD6CB4, #FC0D1B, #FD8E25, #FFFD3
 
     .ps__accordion-container {
       font-size: 0.3rem;
+    }
+  }
+
+}
+
+@media screen and (min-width: 800px) {
+  .ps__sidebar-container {
+    &.open {
+      width: 30vw;
     }
   }
 }

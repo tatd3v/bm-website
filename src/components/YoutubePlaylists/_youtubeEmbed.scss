@@ -1,8 +1,11 @@
 .ye__responsive-container {
-  width: 100%;
   aspect-ratio: 16 / 9;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
 
-  @media screen and (max-width: 768px) {
-    margin-top: 1rem;
+  .ye__youtube-iframe {
+    height: 100%;
   }
 }
