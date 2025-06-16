@@ -1,9 +1,11 @@
 // @components
 import { YoutubeEmbed } from '@/components';
 
+// @pages
+import { YoutubeLayout } from '@pages';
+
 // @styles
 import './_home.scss';
-import { YoutubeLayout } from '@pages';
 
 export const HomePage = () => {
   return (
