@@ -6,7 +6,7 @@ import { Container, Navbar } from 'react-bootstrap';
 import Logo from '../../assets/logo.png';
 
 // @components
-import { SubNavbar } from './SubNavbar';
+//import { SubNavbar } from './SubNavbar';
 import { SocialMediaNav } from './SocialMediaNavBar';
 
 // @styles
@@ -64,7 +64,7 @@ const Header = () => {
           variant="dark"
           ref={collapseRef}
         >
-          <SubNavbar />
+          {/* <SubNavbar /> */}
         </Navbar.Collapse>
       </Container>
     </Navbar>
