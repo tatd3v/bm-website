@@ -3,8 +3,6 @@ import axios from 'axios';
 
 const API_URL = process.env.VITE_API_URL;
 
-console.log(`${API_URL}api/v1/youtube/`)
-
 export async function fetchPlaylistsData() {
   try {
 
