@@ -47,6 +47,7 @@ dist-ssr
 
 # Local files
 *.local
+*.pem
 
 # Logs
 logs
