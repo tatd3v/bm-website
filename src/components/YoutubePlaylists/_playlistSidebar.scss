@@ -127,7 +127,7 @@ $rainbow-background: linear-gradient(to right, #FD6CB4, #FC0D1B, #FD8E25, #FFFD3
 
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 768px) {
   .ps__sidebar-container {
     &.open {
       width: 30vw;
