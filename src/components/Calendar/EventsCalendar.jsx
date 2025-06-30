@@ -23,9 +23,9 @@ import {
 } from '../../app';
 
 export const EventsCalendar = ({ isOpen }) => {
-  const { eventsData, eventInfo } = useSelector((state) => state.data.calendar);
+  const { eventsData, eventInfo } = useSelector(state => state.data.calendar);
   const { showCalendar, showEvent, isAnimating } = useSelector(
-    (state) => state.ui.calendar
+    state => state.ui.calendar
   );
 
   const dispatch = useDispatch();
@@ -44,7 +44,7 @@ export const EventsCalendar = ({ isOpen }) => {
   }, [isOpen]);
 
   useEffect(() => {
-    const handleOutsideClick = (event) => {
+    const handleOutsideClick = event => {
       const clickedOutsideCalendar =
         calendarRef.current && !calendarRef.current.contains(event.target);
 
@@ -68,8 +68,8 @@ export const EventsCalendar = ({ isOpen }) => {
   }, [showCalendar, showEvent]);
 
   const onClickEvent = useCallback(
-    (date) => {
-      const eventData = eventsData?.find((event) => {
+    date => {
+      const eventData = eventsData?.find(event => {
         const eventDate = new Date(event.date);
         return eventDate.getTime() === date.getTime();
       });
@@ -81,7 +81,7 @@ export const EventsCalendar = ({ isOpen }) => {
   const tileClassName = useCallback(
     ({ date }) => {
       const highlighted = eventsData?.some(
-        (event) => differenceInCalendarDays(date, new Date(event.date)) === 0
+        event => differenceInCalendarDays(date, new Date(event.date)) === 0
       );
       return highlighted ? 'react-calendar__tile--hasActive' : null;
     },
@@ -90,7 +90,7 @@ export const EventsCalendar = ({ isOpen }) => {
   const tileContent = useCallback(
     ({ date, view }) => {
       const highlighted = eventsData?.find(
-        (event) => differenceInCalendarDays(date, new Date(event.date)) === 0
+        event => differenceInCalendarDays(date, new Date(event.date)) === 0
       );
       const day = date.toLocaleString('en-US', { weekday: 'short' });
       const content =
