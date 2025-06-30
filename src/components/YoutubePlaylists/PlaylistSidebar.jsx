@@ -33,8 +33,8 @@ export default function PlaylistSidebar() {
     dispatch(closeSidebar());
   };
 
-  if (status === 'loading') {
-    return <Loading />;
+  if ((status === 'idle' || status === 'loading') && playlists.length === 0) {
+    return null;
   }
 
   if (status === 'failed' && playlists.length === 0) {
