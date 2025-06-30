@@ -1,28 +1,19 @@
 @use "../../styles/colors"as *;
 
-$button-animation: linear 3s infinite running slidebg;
-$rainbow-background: linear-gradient(to right, #FD6CB4, #FC0D1B, #FD8E25, #FFFD38, #128D15, #1FC0BF, #401195, #8D118C, #FD6CB4);
-
-@mixin animation() {
-  animation: $button-animation;
-  background-image: $rainbow-background;
-  border-color: transparent;
-  box-shadow: none;
-  color: #000;
-}
-
 .ps__sidebar-container {
   background: $low-transparency;
   color: $main-font-color;
   display: flex;
   flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 50;
   height: 100%;
-  min-height: 100%;
-  overflow: hidden;
-  position: fixed;
-  transition: width 0.6s;
+  max-height: 100vh;
+  overflow-y: auto;
   width: 0;
-  z-index: 10;
+  transition: width 0.6s;
 
   &.open {
     width: 100vw;
@@ -39,14 +30,13 @@ $rainbow-background: linear-gradient(to right, #FD6CB4, #FC0D1B, #FD8E25, #FFFD3
     background: $low-transparency;
     display: flex;
     flex-direction: row-reverse;
-    padding: 0.5rem 1.25rem;
+    padding: 2rem 1.25rem 0.5rem;
 
     .ps__close-button {
       margin-left: auto;
 
       .btn-close {
         background-color: #fff;
-
       }
     }
 
@@ -83,7 +73,7 @@ $rainbow-background: linear-gradient(to right, #FD6CB4, #FC0D1B, #FD8E25, #FFFD3
         }
 
         .accordion-button:not(.collapsed) {
-          box-shadow: inset 0 calc(-1* var(--bs-accordion-border-width)) 0 #000;
+          box-shadow: inset 0 calc(-1 * var(--bs-accordion-border-width)) 0 #000;
         }
       }
 
@@ -93,14 +83,6 @@ $rainbow-background: linear-gradient(to right, #FD6CB4, #FC0D1B, #FD8E25, #FFFD3
             .btn {
               font-size: 0.7rem;
               letter-spacing: 1px;
-
-              &.animate,
-              &:active,
-              &:focus,
-              &:visited,
-              :not(.btn-check)+.btn:active:active {
-                @include animation();
-              }
             }
           }
         }
@@ -119,24 +101,15 @@ $rainbow-background: linear-gradient(to right, #FD6CB4, #FC0D1B, #FD8E25, #FFFD3
     >* {
       font-size: 0.3rem;
     }
-
-    .ps__accordion-container {
-      font-size: 0.3rem;
-    }
   }
 
+  .ps__accordion-container {
+    font-size: 0.3rem;
+  }
 }
 
 @media screen and (min-width: 768px) {
-  .ps__sidebar-container {
-    &.open {
-      width: 30vw;
-    }
-  }
-}
-
-@keyframes slidebg {
-  to {
-    background-position: 20vw;
+  .ps__sidebar-container.open {
+    width: 40vw;
   }
 }
