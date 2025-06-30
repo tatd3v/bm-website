@@ -1,5 +1,16 @@
 @use "../../styles/colors"as *;
 
+$button-animation: linear 3s infinite running slidebg;
+$rainbow-background: linear-gradient(to right, #FD6CB4, #FC0D1B, #FD8E25, #FFFD38, #128D15, #1FC0BF, #401195, #8D118C, #FD6CB4);
+
+@mixin animation() {
+  animation: $button-animation;
+  background-image: $rainbow-background;
+  border-color: transparent;
+  box-shadow: none;
+  color: #000;
+}
+
 .ps__sidebar-container {
   background: $low-transparency;
   color: $main-font-color;
@@ -37,6 +48,7 @@
 
       .btn-close {
         background-color: #fff;
+
       }
     }
 
@@ -49,7 +61,6 @@
   }
 
   .ps__accordion-container {
-    font-size: 0.7rem;
     overflow-y: auto;
 
     .accordion-item {
@@ -62,6 +73,7 @@
         .accordion-button {
           background: $high_transparency;
           color: $main-font-color;
+          font-size: 1.2rem;
 
           &::after {
             background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
@@ -73,7 +85,7 @@
         }
 
         .accordion-button:not(.collapsed) {
-          box-shadow: inset 0 calc(-1 * var(--bs-accordion-border-width)) 0 #000;
+          box-shadow: inset 0 calc(-1* var(--bs-accordion-border-width)) 0 #000;
         }
       }
 
@@ -81,8 +93,16 @@
         .accordion-body {
           .vstack {
             .btn {
-              font-size: 0.7rem;
+              font-size: 1rem;
               letter-spacing: 1px;
+
+              &.animate,
+              &:active,
+              &:focus,
+              &:visited,
+              :not(.btn-check)+.btn:active:active {
+                @include animation();
+              }
             }
           }
         }
@@ -101,15 +121,24 @@
     >* {
       font-size: 0.3rem;
     }
+
+    .ps__accordion-container {
+      font-size: 0.3rem;
+    }
   }
 
-  .ps__accordion-container {
-    font-size: 0.3rem;
-  }
 }
 
 @media screen and (min-width: 768px) {
-  .ps__sidebar-container.open {
-    width: 40vw;
+  .ps__sidebar-container {
+    &.open {
+      width: 40vw;
+    }
+  }
+}
+
+@keyframes slidebg {
+  to {
+    background-position: 20vw;
   }
 }
