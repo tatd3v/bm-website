@@ -46,6 +46,7 @@ export default defineConfig(({ mode }) => {
         '@pages': path.resolve(__dirname, './src/pages'),
         '@routes': path.resolve(__dirname, './src/routes'),
         '@styles': path.resolve(__dirname, './src/styles'),
+        '@ui': path.resolve(__dirname, './src/components/UI')
       },
     },
   };
