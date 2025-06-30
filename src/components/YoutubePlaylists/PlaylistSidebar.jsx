@@ -15,9 +15,9 @@ import './_playlistSidebar.scss';
 export default function PlaylistSidebar() {
   const dispatch = useDispatch();
   const { currentVideo, error, playlists, status } = useSelector(
-    (state) => state.youtubePlaylist
+    state => state.youtubePlaylist
   );
-  const isSidebarOpen = useSelector((state) => state.ui.youtube.sidebar.isOpen);
+  const isSidebarOpen = useSelector(state => state.ui.youtube.sidebar.isOpen);
 
   useEffect(() => {
     if (status === 'idle') {
@@ -25,7 +25,7 @@ export default function PlaylistSidebar() {
     }
   }, [status, dispatch]);
 
-  const handleVideoClick = (videoId) => {
+  const handleVideoClick = videoId => {
     dispatch(setCurrentVideo(videoId));
   };
 
@@ -33,8 +33,8 @@ export default function PlaylistSidebar() {
     dispatch(closeSidebar());
   };
 
-  if (status === 'loading') {
-    return <Loading />;
+  if ((status === 'idle' || status === 'loading') && playlists.length === 0) {
+    return null;
   }
 
   if (status === 'failed' && playlists.length === 0) {
@@ -61,10 +61,11 @@ export default function PlaylistSidebar() {
                 <Accordion.Body>
                   <Stack direction="vertical" gap={2}>
                     {playlist.videos &&
-                      playlist.videos.map((item) => (
+                      playlist.videos.map(item => (
                         <Button
-                          className={`ps__video-button ${currentVideo === item.videoId && 'animate'
-                            }`}
+                          className={`ps__video-button ${
+                            currentVideo === item.videoId && 'animate'
+                          }`}
                           variant="outline-light"
                           key={item.videoId}
                           onClick={() => handleVideoClick(item.videoId)}

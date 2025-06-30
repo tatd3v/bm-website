@@ -17,7 +17,7 @@ const Header = () => {
   const toggleButtonRef = useRef(null);
 
   useEffect(() => {
-    const handleDocumentClick = (event) => {
+    const handleDocumentClick = event => {
       const container = collapseRef.current;
 
       if (
@@ -40,7 +40,6 @@ const Header = () => {
 
   return (
     <Navbar
-      collapseOnSelect
       className="header__navbar w-100 main-font-style"
       bg="transparent"
       expand="lg"
@@ -53,19 +52,14 @@ const Header = () => {
           <Navbar.Brand className="header__navbar-brand d-flex flex-row justify-content-center my-lg-0 mx-0 p-0">
             <img src={Logo} alt="Logo" />
           </Navbar.Brand>
-          <Navbar.Toggle
-            aria-controls="responsive-navbar-nav"
-            ref={toggleButtonRef}
-          />
+        </div>
+        <div className="header__menu-toggle-position d-lg-none">
+          <SubNavbar />
         </div>
         <SocialMediaNav />
-        <Navbar.Collapse
-          id="responsive-navbar-nav"
-          variant="dark"
-          ref={collapseRef}
-        >
+        <div className="d-none d-lg-block w-100">
           <SubNavbar />
-        </Navbar.Collapse>
+        </div>
       </Container>
     </Navbar>
   );

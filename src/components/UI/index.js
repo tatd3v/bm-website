@@ -1,3 +1,4 @@
 import { StickyButton } from './StickyButton';
+import { Hamburglar } from './Hamburglar';
 
-export { StickyButton };
+export { Hamburglar, StickyButton };
