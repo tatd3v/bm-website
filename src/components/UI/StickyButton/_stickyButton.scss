@@ -10,12 +10,12 @@ $outer-button-size: 60px;
   z-index: 5;
 
   &.calendar {
-    bottom: 20%;
+    top: 35%;
     right: 0;
   }
 
   &.sidebar {
-    bottom: 50%;
+    top: 30%;
     left: 0;
     transform: translateY(50%);
   }
