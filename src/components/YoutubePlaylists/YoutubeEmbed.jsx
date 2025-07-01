@@ -1,17 +1,17 @@
 // @vendors
-import { memo, useState, useEffect, useCallback } from "react";
+import { memo, useState, useEffect, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import YouTube from 'react-youtube';
 
 // @components
-import { Loading } from "../Loading";
+import { Loading } from '../Loading';
 
 // @styles
-import "./_youtubeEmbed.scss";
+import './_youtubeEmbed.scss';
 
 const YoutubeEmbed = () => {
-  const { currentVideo } = useSelector((state) => state.youtubePlaylist);
-  const hideLoading = useSelector((state) => state.ui.loading.hideLoading);
+  const { currentVideo } = useSelector(state => state.youtubePlaylist);
+  const hideLoading = useSelector(state => state.ui.loading.hideLoading);
 
   const [isLoading, setIsLoading] = useState(true);
   const [hasTriedToLoad, setHasTriedToLoad] = useState(false);
@@ -19,8 +19,8 @@ const YoutubeEmbed = () => {
 
   useEffect(() => {
     if (!window.YT) {
-      const tag = document.createElement("script");
-      tag.src = "https://www.youtube.com/iframe_api";
+      const tag = document.createElement('script');
+      tag.src = 'https://www.youtube.com/iframe_api';
       tag.async = true;
       tag.onload = () => {
         setApiLoaded(true);
@@ -50,8 +50,8 @@ const YoutubeEmbed = () => {
   }, []);
 
   const playerOptions = {
-    height: "100vh",
-    width: "100%",
+    height: '100vh',
+    width: '100%',
     playerVars: {
       autoplay: 1,
       rel: 0,
@@ -73,9 +73,8 @@ const YoutubeEmbed = () => {
           iframeClassName="ye__youtube-frame"
         />
       ) : (
-        hasTriedToLoad && !isLoading && (
-          <p className="ye__no-video">No hay videos para mostrar</p>
-        )
+        hasTriedToLoad &&
+        !isLoading && <p className="ye__no-video">No hay videos para mostrar</p>
       )}
     </div>
   );

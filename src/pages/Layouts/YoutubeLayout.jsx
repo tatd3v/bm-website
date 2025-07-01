@@ -13,7 +13,7 @@ import './_youtubeLayout.scss';
 
 const YoutubeLayout = ({ children }) => {
   const dispatch = useDispatch();
-  const isSidebarOpen = useSelector((state) => state.ui.youtube.sidebar.isOpen);
+  const isSidebarOpen = useSelector(state => state.ui.youtube.sidebar.isOpen);
 
   const handleOpenSidebar = () => {
     dispatch(openSidebar());
